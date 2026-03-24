@@ -6,18 +6,17 @@ A locally-hosted version of the LC Education Consulting website with all assets 
 
 ```
 lcec/
-├── assets/                      # Website assets
-│   ├── fonts/                   # 21 Google Fonts WOFF2 files
-│   │   ├── cabin-*.woff2
-│   │   ├── lato-*.woff2
-│   │   ├── bitter-*.woff2
-│   │   └── lobster-two-*.woff2
-│   └── images/                  # SVG graphics + legacy raster files
-│       ├── favicon.svg          # Favicon in SVG format
-│       ├── lc-logo.svg          # Company logo in SVG format
-│       ├── background-pattern.svg  # Decorative background pattern
-│       ├── avatar-placeholder.svg  # Profile image placeholder
-│       └── LC LOGO-3adc54b.jpg    # Legacy raster logo (not in use)
+├── fonts/                       # 21 Google Fonts WOFF2 files
+│   ├── cabin-*.woff2
+│   ├── lato-*.woff2
+│   ├── bitter-*.woff2
+│   └── lobster-two-*.woff2
+├── images/                      # SVG graphics + legacy raster files
+│   ├── favicon.svg              # Favicon in SVG format
+│   ├── lc-logo.svg              # Company logo in SVG format
+│   ├── background-pattern.svg   # Decorative background pattern
+│   ├── avatar-placeholder.svg   # Profile image placeholder
+│   └── LC LOGO-3adc54b.jpg      # Legacy raster logo (not in use)
 ├── index.html                   # Homepage
 ├── contact.html                 # Contact page
 ├── our-story.html               # About/company history page
