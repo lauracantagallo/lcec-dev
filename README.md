@@ -6,44 +6,27 @@ A locally-hosted version of the LC Education Consulting website with all assets 
 
 ```
 lcec/
-├── public/                      # Website root (serve this directory to browsers)
-│   ├── assets/
-│   │   ├── fonts/              # 21 Google Fonts WOFF2 files
-│   │   │   ├── cabin-*.woff2
-│   │   │   ├── lato-*.woff2
-│   │   │   ├── bitter-*.woff2
-│   │   │   └── lobster-two-*.woff2
-│   │   └── images/              # SVG graphics + legacy raster files
-│   │       ├── favicon.svg      # Favicon in SVG format
-│   │       ├── lc-logo.svg      # Company logo in SVG format
-│   │       ├── background-pattern.svg  # Decorative background pattern
-│   │       ├── avatar-placeholder.svg  # Profile image placeholder
-│   │       └── LC LOGO-3adc54b.jpg    # Legacy raster logo (not in use)
-│   ├── index.html               # Homepage
-│   ├── contact.html             # Contact page
-│   ├── our-story.html           # About/company history page
-│   ├── why-choose-us.html       # Value proposition page
-│   ├── accessibility-services.html # Services page
-│   ├── portfolio.html           # Project portfolio page
-│   ├── webinars-&-training.html # Training/webinar offerings
-│   ├── manifest.webmanifest     # PWA manifest
-│   └── sw.js                    # Service Worker for offline support
-│
-├── scripts/                     # Utility scripts for development
-│   ├── download_assets.ps1      # Downloads Google Fonts
-│   ├── replace_urls.ps1         # Replaces CDN URLs with local paths
-│   ├── replace_bg_images.ps1    # Updates CSS background image URLs
-│   ├── copy_and_cleanup_images.ps1  # Manages image assets
-│   └── update_to_svgs.ps1       # Converts images to SVG format
-│
-├── docs/                        # Documentation and archives
-│   ├── hts-cache/               # HTTrack web scraper cache (for reference)
-│   ├── cookies.txt              # HTTrack artifacts
-│   ├── hts-log.txt
-│   ├── backblue.gif
-│   ├── fade.gif
-│   └── index.html.bak
-│
+├── assets/                      # Website assets
+│   ├── fonts/                   # 21 Google Fonts WOFF2 files
+│   │   ├── cabin-*.woff2
+│   │   ├── lato-*.woff2
+│   │   ├── bitter-*.woff2
+│   │   └── lobster-two-*.woff2
+│   └── images/                  # SVG graphics + legacy raster files
+│       ├── favicon.svg          # Favicon in SVG format
+│       ├── lc-logo.svg          # Company logo in SVG format
+│       ├── background-pattern.svg  # Decorative background pattern
+│       ├── avatar-placeholder.svg  # Profile image placeholder
+│       └── LC LOGO-3adc54b.jpg    # Legacy raster logo (not in use)
+├── index.html                   # Homepage
+├── contact.html                 # Contact page
+├── our-story.html               # About/company history page
+├── why-choose-us.html           # Value proposition page
+├── accessibility-services.html  # Services page
+├── portfolio.html               # Project portfolio page
+├── webinars-&-training.html     # Training/webinar offerings
+├── manifest.webmanifest         # PWA manifest
+├── sw.js                        # Service Worker for offline support
 ├── README.md                    # This file
 └── lcec.code-workspace          # VS Code workspace configuration
 ```
@@ -70,22 +53,20 @@ lcec/
 
 ### Option 1: Simple HTTP Server (Python)
 ```powershell
-cd public
 python -m http.server 8000
 # Visit http://localhost:8000 in your browser
 ```
 
 ### Option 2: Simple HTTP Server (Node.js)
 ```powershell
-cd public
 npx http-server
 ```
 
 ### Option 3: Local IIS
-Point your web server's root to the `public/` directory.
+Point your web server's root to the root `lcec/` directory.
 
 ### Option 4: Development with VS Code Live Server
-Install the Live Server extension and right-click `public/index.html` → "Open with Live Server"
+Install the Live Server extension and right-click `index.html` → "Open with Live Server"
 
 ## Key Features
 
