@@ -13,14 +13,14 @@
 }
 
 .contact-form {
-  max-width: 680px;
   margin: 0 auto;
+  max-width: 680px;
 
   &__heading {
+    color: $color-primary;
     font-family: $font-display;
     font-size: $font-size-3xl;
     font-weight: 700;
-    color: $color-primary;
     margin-bottom: $space-5;
     text-align: center;
   }
@@ -32,32 +32,32 @@
 }
 
 .form-label {
+  color: $color-text;
   display: block;
   font-family: $font-heading;
   font-size: $font-size-sm;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: $letter-spacing-wider;
-  color: $color-text;
   margin-bottom: $space-1;
+  text-transform: uppercase;
 }
 
 .form-input {
-  display: block;
-  width: 100%;
-  padding: 0.5em;
-  font-family: $font-body;
-  font-size: $font-size-base;
-  color: $color-text;
   background-color: $color-white;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  color: $color-text;
+  display: block;
+  font-family: $font-body;
+  font-size: $font-size-base;
   line-height: normal;
+  padding: 0.5em;
   transition: border-color 0.2s ease;
+  width: 100%;
 
   &:focus {
+    border-color: $color-primary;
     outline: 2px solid $color-primary;
     outline-offset: 1px;
-    border-color: $color-primary;
   }
 
   &::placeholder {
@@ -66,22 +66,22 @@
 }
 
 .form-textarea {
-  display: block;
-  width: 100%;
-  padding: 0.5em;
-  font-family: $font-body;
-  font-size: $font-size-base;
-  color: $color-text;
   background-color: $color-white;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  color: $color-text;
+  display: block;
+  font-family: $font-body;
+  font-size: $font-size-base;
   line-height: 1.75;
+  padding: 0.5em;
   resize: vertical;
   transition: border-color 0.2s ease;
+  width: 100%;
 
   &:focus {
+    border-color: $color-primary;
     outline: 2px solid $color-primary;
     outline-offset: 1px;
-    border-color: $color-primary;
   }
 
   &::placeholder {
@@ -90,19 +90,19 @@
 }
 
 .form-submit {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-family: $font-heading;
-  font-weight: 700;
-  font-size: $font-size-base;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
-  color: $color-white;
   background-color: $color-primary;
   border: 2px solid $color-primary;
-  padding: $space-2 $space-5;
+  color: $color-white;
   cursor: pointer;
+  display: inline-flex;
+  font-family: $font-heading;
+  font-size: $font-size-base;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: $letter-spacing-wide;
+  padding: $space-2 $space-5;
+  text-transform: uppercase;
   transition: $transition-base;
   width: 100%;
 
@@ -118,9 +118,9 @@
 }
 
 .form-privacy {
-  margin-top: $space-3;
-  font-size: $font-size-xs;
   color: $color-text-medium;
+  font-size: $font-size-xs;
+  margin-top: $space-3;
   text-align: center;
 
   a {

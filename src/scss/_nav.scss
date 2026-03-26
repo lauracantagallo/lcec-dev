@@ -4,24 +4,24 @@
 
 .site-header {
   background-color: $color-white;
+  border-bottom: 1px solid $color-border;
   position: relative;
   z-index: $nav-dropdown-z;
-  border-bottom: 1px solid $color-border;
 }
 
 .header-inner {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: $space-4;
   padding-right: $space-4;
+  width: 100%;
 
   @media (max-width: $bp-mobile) {
-    display: flex;
     align-items: center;
-    position: relative;
-    padding-top: $space-3;
+    display: flex;
     padding-bottom: $space-3;
+    padding-top: $space-3;
+    position: relative;
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
@@ -40,12 +40,12 @@
 // ─── Logo row ─────────────────────────────────────────────────────────────────
 
 .header-logo-row {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
-  position: relative;
-  padding-top: $space-3;
   padding-bottom: $space-2;
+  padding-top: $space-3;
+  position: relative;
 
   @media (max-width: $bp-mobile) {
     flex: 1;
@@ -55,9 +55,9 @@
 }
 
 .logo {
+  color: $color-text;
   display: inline-block;
   text-decoration: none;
-  color: $color-text;
 
   &:hover,
   &:focus {
@@ -65,8 +65,8 @@
   }
 
   @media (max-width: $bp-mobile) {
-    position: absolute;
     left: 50%;
+    position: absolute;
     transform: translateX(-50%);
     white-space: nowrap;
   }
@@ -74,23 +74,23 @@
 
 .logo__text {
   font-family: $font-body;
-  font-weight: 700;
   font-size: $font-size-2xl;
-  line-height: $line-height-tight;
-  text-transform: uppercase;
+  font-weight: 700;
   letter-spacing: 2px;
+  line-height: $line-height-tight;
   margin-bottom: 0;
   padding: $space-2 $space-3;
+  text-transform: uppercase;
   width: fit-content;
 }
 
 .header-phone {
+  color: inherit;
   font-family: $font-body;
   font-size: $font-size-base;
-  text-align: right;
-  color: inherit;
   position: absolute;
   right: $space-3;
+  text-align: right;
 
   a {
     color: $color-primary;
@@ -114,8 +114,8 @@
 // ─── Nav bar row ──────────────────────────────────────────────────────────────
 
 .header-nav-row {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
   min-height: $nav-height;
 
@@ -135,29 +135,29 @@
 }
 
 .nav__list {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   gap: 0;
+  justify-content: center;
 }
 
 .nav__item {
-  position: relative;
-  white-space: nowrap;
   font-family: $font-heading;
   letter-spacing: $letter-spacing-nav;
+  position: relative;
+  white-space: nowrap;
 }
 
 .nav__link {
+  border-bottom: 1px solid transparent;
+  color: $color-text;
   display: block;
   font-size: $nav-font-size;
   font-weight: 400;
-  text-transform: uppercase;
-  color: $color-text;
-  text-decoration: none;
   padding: $space-2 $space-3;
+  text-decoration: none;
+  text-transform: uppercase;
   transition: $transition-base;
-  border-bottom: 1px solid transparent;
 
   &:hover,
   &:focus {
@@ -174,22 +174,22 @@
 // ─── Dropdown ─────────────────────────────────────────────────────────────────
 
 .nav__dropdown-btn {
-  display: flex;
   align-items: center;
-  gap: $space-1;
-  font-size: $nav-font-size;
-  font-weight: 400;
-  font-family: $font-heading;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-nav;
-  color: $color-text;
-  text-decoration: none;
-  padding: $space-2 $space-3;
   background: none;
   border: none;
-  cursor: pointer;
-  transition: $transition-base;
   border-bottom: 1px solid transparent;
+  color: $color-text;
+  cursor: pointer;
+  display: flex;
+  font-family: $font-heading;
+  font-size: $nav-font-size;
+  font-weight: 400;
+  gap: $space-1;
+  letter-spacing: $letter-spacing-nav;
+  padding: $space-2 $space-3;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $transition-base;
 
   &:hover,
   &:focus {
@@ -198,8 +198,8 @@
   }
 
   svg {
-    transition: transform 0.3s ease;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
   }
 
   &[aria-expanded="true"] svg {
@@ -208,16 +208,16 @@
 }
 
 .nav__dropdown {
+  background-color: $color-white;
+  border-radius: 0;
+  box-shadow: $shadow-dropdown;
   display: none;
-  position: absolute;
-  top: calc(100% + 4px);
-  right: 0;
   left: auto;
   min-width: 220px;
-  background-color: $color-white;
-  box-shadow: $shadow-dropdown;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
   z-index: $nav-dropdown-z;
-  border-radius: 0;
 
   &.is-open {
     display: block;
@@ -237,17 +237,17 @@
 }
 
 .nav__dropdown-link {
-  display: flex;
   align-items: center;
-  padding: $space-2 $space-3;
-  font-size: $font-size-sm;
+  color: $color-text-light;
+  display: flex;
   font-family: $font-body;
+  font-size: $font-size-sm;
   font-weight: 400;
   letter-spacing: normal;
-  color: $color-text-light;
+  line-height: $line-height-base;
+  padding: $space-2 $space-3;
   text-decoration: none;
   transition: $transition-base;
-  line-height: $line-height-base;
 
   &:hover,
   &:focus {
@@ -263,46 +263,45 @@
 // ─── Mobile nav toggle ────────────────────────────────────────────────────────
 
 .mobile-nav-toggle {
-  display: none;
   background: none;
   border: none;
-  cursor: pointer;
-  padding: $space-2;
   color: $color-text;
+  cursor: pointer;
+  display: none;
+  padding: $space-2;
 
   @media (max-width: $bp-tablet) {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
   }
 
   svg {
-    width: 24px;
     height: 24px;
+    width: 24px;
   }
 }
 
 // ─── Mobile nav panel ─────────────────────────────────────────────────────────
 
 .mobile-nav {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 85vw;
-  max-width: 320px;
-  height: 100%;
   background-color: $color-primary-light;
-  z-index: $nav-mobile-z;
+  box-shadow: $shadow-card;
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  max-width: 320px;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  flex-direction: column;
-  box-shadow: $shadow-card;
+  padding-top: $nav-height;
+  position: fixed;
+  top: 0;
   transform: translateX(-100%);
   transition: $transition-nav;
-  padding-top: $nav-height;
+  width: 85vw;
+  z-index: $nav-mobile-z;
 
   @media (max-width: $bp-tablet) {
     display: flex;
@@ -314,18 +313,18 @@
 }
 
 .mobile-nav__close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
   background: none;
   border: none;
-  cursor: pointer;
   color: $color-text;
+  cursor: pointer;
   padding: $space-1;
+  position: absolute;
+  right: 15px;
+  top: 15px;
 
   svg {
-    width: 20px;
     height: 20px;
+    width: 20px;
   }
 }
 
@@ -335,18 +334,17 @@
   padding-bottom: $space-4;
 }
 
-
 .mobile-nav__link {
+  color: $color-text;
   display: block;
-  padding: $space-3 $space-4;
   font-family: $font-heading;
   font-size: $font-size-base;
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: $letter-spacing-nav;
-  color: $color-text;
-  text-decoration: none;
   line-height: $line-height-base;
+  padding: $space-3 $space-4;
+  text-decoration: none;
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
@@ -358,10 +356,10 @@
 // ─── Mobile overlay ───────────────────────────────────────────────────────────
 
 .mobile-nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
   background: rgba(0, 0, 0, 0.4);
+  display: none;
+  inset: 0;
+  position: fixed;
   z-index: #{$nav-mobile-z - 1};
 
   &.is-visible {
@@ -371,8 +369,8 @@
 
 // Prevent body scroll when mobile nav open
 body.nav-open {
-  overflow: hidden;
-  touch-action: none;
-  position: fixed;
   max-width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  touch-action: none;
 }

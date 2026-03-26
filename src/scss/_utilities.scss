@@ -11,16 +11,16 @@
 
 // Skip link for accessibility
 .skip-link {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  z-index: 99999;
   background: $color-primary-dark;
   color: $color-white;
-  padding: $space-2 $space-3;
   font-family: $font-heading;
   font-weight: 700;
+  left: 0;
+  padding: $space-2 $space-3;
+  position: absolute;
   text-decoration: none;
+  top: -100%;
+  z-index: 99999;
 
   &:focus {
     top: 0;

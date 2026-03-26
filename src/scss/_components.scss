@@ -3,19 +3,19 @@
 // ─── Buttons ──────────────────────────────────────────────────────────────────
 
 .btn {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-family: $font-body;
-  font-weight: 400;
-  font-size: $font-size-sm;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-wide;
-  text-decoration: none;
-  cursor: pointer;
   border: 2px solid transparent;
-  padding: $space-2 $space-4;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: $letter-spacing-wide;
   line-height: $line-height-tight;
+  padding: $space-2 $space-4;
+  text-decoration: none;
+  text-transform: uppercase;
   transition: $transition-base;
   white-space: nowrap;
 
@@ -27,8 +27,8 @@
 
 .btn--primary {
   background-color: $color-white;
-  color: $color-text;
   border-color: $color-white;
+  color: $color-text;
 
   &:hover {
     background-color: $color-primary-light;
@@ -39,8 +39,8 @@
 // Appears as plain text until hovered — then shows white bg + border
 .btn--ghost {
   background-color: transparent;
-  color: $color-white;
   border-color: $color-white;
+  color: $color-white;
 
   &:hover {
     background-color: $color-white;
@@ -62,11 +62,11 @@
   }
 
   &__inner {
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
     padding: $space-1 $space-6;
 
     @media (max-width: $bp-mobile) {
@@ -76,15 +76,15 @@
   }
 
   p {
+    color: $color-white;
     font-family: $font-body;
     font-size: $font-size-base;
     font-weight: 400;
-    text-transform: uppercase;
     letter-spacing: $letter-spacing-wide;
     text-align: center;
-    white-space: pre-line;
+    text-transform: uppercase;
     text-wrap: pretty;
-    color: $color-white;
+    white-space: pre-line;
   }
 }
 
@@ -92,34 +92,34 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: $space-4;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: $space-4;
 
   @media (max-width: $bp-tablet) {
-    grid-template-columns: 1fr;
     gap: $space-3;
+    grid-template-columns: 1fr;
   }
 }
 
 .stat {
   background-color: $color-gray;
-  text-align: center;
   padding: $space-5 $space-4;
+  text-align: center;
 
   &__value {
+    color: $color-text;
     font-family: $font-body;
     font-size: 1.875rem;
     font-weight: 700;
-    color: $color-text;
     line-height: $line-height-tight;
     margin-bottom: $space-3;
   }
 
   &__label {
+    color: $color-text;
     font-family: $font-body;
     font-size: $font-size-lg;
-    color: $color-text;
     line-height: $line-height-base;
   }
 }
@@ -127,28 +127,28 @@
 // ─── Testimonial / Quote ──────────────────────────────────────────────────────
 
 .quote-block {
-  max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  max-width: 800px;
   padding: $space-5 $space-4;
+  text-align: center;
 
   &__text {
+    color: $color-white;
     font-family: $font-body;
     font-size: 1.875rem;
-    font-weight: 700;
-    line-height: $line-height-loose;
-    letter-spacing: normal;
-    color: $color-white;
-    text-transform: uppercase;
     font-style: normal;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: $line-height-loose;
     margin-bottom: $space-3;
+    text-transform: uppercase;
   }
 
   &__attribution {
+    color: $color-white;
     font-family: $font-body;
     font-size: $font-size-sm;
     font-weight: 400;
-    color: $color-white;
   }
 }
 
@@ -156,8 +156,8 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: $space-4;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: $space-5;
 
   @media (max-width: $bp-tablet) {
@@ -167,44 +167,44 @@
 
 .service-card {
   background-color: $color-white;
+  box-shadow: $shadow-card;
   color: $color-text;
   padding: $space-5;
-  box-shadow: $shadow-card;
 
   &__heading {
+    color: $color-primary;
     font-family: $font-heading;
     font-size: $font-size-xl;
     font-weight: 700;
-    color: $color-primary;
-    margin-bottom: $space-3;
     line-height: $line-height-snug;
+    margin-bottom: $space-3;
   }
 
   &__description {
+    color: $color-text-medium;
     font-size: $font-size-base;
     line-height: $line-height-loose;
     margin-bottom: $space-3;
-    color: $color-text-medium;
   }
 
   &__features {
     list-style: disc;
-    padding-left: 1.3em;
     margin: $space-3 0;
+    padding-left: 1.3em;
 
     li {
+      color: $color-text;
       font-size: $font-size-base;
       line-height: $line-height-base;
-      color: $color-text;
       margin-bottom: $space-1;
     }
   }
 
   &__case-study {
-    margin-top: $space-3;
+    color: $color-text-medium;
     font-size: $font-size-sm;
     font-style: italic;
-    color: $color-text-medium;
+    margin-top: $space-3;
   }
 }
 
@@ -212,8 +212,8 @@
 
 .training-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: $space-4;
+  grid-template-columns: repeat(2, 1fr);
   margin-top: $space-4;
 
   @media (max-width: $bp-tablet) {
@@ -223,22 +223,22 @@
 
 .training-card {
   background-color: $color-white;
+  box-shadow: $shadow-card;
   color: $color-text;
   padding: $space-5;
-  box-shadow: $shadow-card;
 
   &__heading {
+    color: $color-primary;
     font-family: $font-heading;
     font-size: $font-size-xl;
     font-weight: 700;
-    color: $color-primary;
     margin-bottom: $space-2;
   }
 
   &__description {
+    color: $color-text-medium;
     font-size: $font-size-base;
     line-height: $line-height-loose;
-    color: $color-text-medium;
   }
 }
 
@@ -246,13 +246,13 @@
 
 .credentials-list {
   list-style: disc;
-  padding-left: 1.3em;
   margin: $space-4 0;
+  padding-left: 1.3em;
 
   li {
+    color: $color-text-on-dark;
     font-size: $font-size-base;
     line-height: $line-height-loose;
-    color: $color-text-on-dark;
     margin-bottom: $space-2;
   }
 }
@@ -263,12 +263,12 @@
   margin-top: $space-4;
 
   li {
+    border-left: 3px solid $color-primary-light;
+    color: $color-text-on-dark;
     font-size: $font-size-base;
     line-height: $line-height-loose;
-    color: $color-text-on-dark;
     margin-bottom: $space-3;
     padding-left: $space-3;
-    border-left: 3px solid $color-primary-light;
   }
 }
 
@@ -276,33 +276,33 @@
 
 .contact-info {
   &__heading {
+    color: $color-text-on-dark;
     font-family: $font-heading;
     font-size: $font-size-xl;
     font-weight: 700;
-    color: $color-text-on-dark;
     margin-bottom: $space-3;
   }
 
   &__row {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: $space-3;
     margin-bottom: $space-3;
   }
 
   &__label {
+    color: $color-primary-light;
     font-family: $font-heading;
     font-size: $font-size-sm;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: $letter-spacing-wide;
-    color: $color-primary-light;
     min-width: 80px;
+    text-transform: uppercase;
   }
 
   &__value {
-    font-size: $font-size-base;
     color: $color-text-on-dark;
+    font-size: $font-size-base;
 
     a {
       color: $color-text-on-dark;
@@ -318,21 +318,21 @@
 // ─── CTA Block ────────────────────────────────────────────────────────────────
 
 .cta-block {
-  text-align: center;
   padding: $space-6 $space-4;
+  text-align: center;
 
   &__heading {
+    color: $color-text-on-dark;
     font-family: $font-heading;
     font-size: $font-size-3xl;
     font-weight: 700;
-    color: $color-text-on-dark;
     margin-bottom: $space-2;
   }
 
   &__subheading {
+    color: $color-primary-light;
     font-family: $font-display;
     font-size: $font-size-lg;
-    color: $color-primary-light;
     margin-bottom: $space-4;
   }
 }
@@ -347,20 +347,19 @@
 }
 
 .social-link {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
   color: #0a66c2;
+  display: inline-flex;
+  justify-content: center;
   text-decoration: none;
   transition: $transition-base;
 
   svg {
-    width: 40px;
     height: 40px;
+    width: 40px;
   }
 
   &:hover {
     color: #084e96;
   }
 }
-

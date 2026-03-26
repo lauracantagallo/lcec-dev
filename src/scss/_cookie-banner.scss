@@ -4,48 +4,48 @@
 // Fixed to lower-right corner; green bg, white text; accept = black on white
 
 .cookie-banner {
-  display: none;
-  position: fixed;
-  bottom: $space-4;
-  right: $space-4;
-  width: 320px;
   background-color: $color-primary;
-  color: $color-white;
-  padding: $space-4;
-  z-index: 9999;
+  bottom: $space-4;
   box-shadow: $shadow-card;
+  color: $color-white;
+  display: none;
   flex-direction: column;
   gap: $space-3;
+  padding: $space-4;
+  position: fixed;
+  right: $space-4;
+  width: 320px;
+  z-index: 9999;
 
   &.is-visible {
     display: flex;
   }
 
   &__message {
+    color: $color-white;
     font-family: $font-body;
     font-size: $font-size-sm;
     line-height: $line-height-base;
-    color: $color-white;
 
     strong {
-      font-weight: 700;
       display: block;
+      font-weight: 700;
       margin-bottom: $space-1;
     }
   }
 
   &__btn {
     align-self: flex-start;
-    font-family: $font-body;
-    font-weight: 400;
-    font-size: $font-size-sm;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-wider;
-    color: $color-text;
     background-color: $color-white;
     border: none;
-    padding: $space-2 $space-4;
+    color: $color-text;
     cursor: pointer;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    letter-spacing: $letter-spacing-wider;
+    padding: $space-2 $space-4;
+    text-transform: uppercase;
     transition: $transition-base;
 
     &:hover {
