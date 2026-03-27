@@ -245,7 +245,7 @@
 
 .nav__dropdown-link {
   align-items: center;
-  color: $color-text-light;
+  color: $color-text-medium;
   display: flex;
   font-family: $font-body;
   font-size: $font-size-sm;
@@ -376,7 +376,7 @@
 // ─── Mobile overlay ───────────────────────────────────────────────────────────
 
 .mobile-nav-overlay {
-  background: rgba(0, 0, 0, 0.4);
+  background: $color-overlay;
   display: none;
   inset: 0;
   position: fixed;
