@@ -33,12 +33,18 @@
     color: $color-text-on-dark;
     font-family: $font-body;
     font-size: $font-size-sm;
+    padding: $space-1 0;
     text-decoration: none;
     transition: color 0.2s ease;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: $color-primary-light;
+    }
+
+    &:focus {
+      color: $color-white;
+      outline: 2px solid $color-white;
+      outline-offset: 2px;
     }
   }
 }

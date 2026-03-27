@@ -81,6 +81,7 @@
     font-size: $font-size-base;
     font-weight: 400;
     letter-spacing: $letter-spacing-wide;
+    max-width: $measure-announcement;
     text-align: center;
     text-transform: uppercase;
     text-wrap: pretty;
@@ -360,5 +361,11 @@
 
   &:hover {
     color: #084e96;
+  }
+
+  &:focus {
+    color: #084e96;
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
   }
 }
