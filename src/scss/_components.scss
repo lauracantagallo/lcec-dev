@@ -56,11 +56,6 @@
   background-color: $color-primary-dark;
   color: $color-white;
   padding: $space-1 $space-3 $space-3;
-  transition: all 0.5s;
-
-  &:hover {
-    filter: invert(0.2);
-  }
 
   &__inner {
     align-items: center;
