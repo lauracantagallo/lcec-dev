@@ -56,6 +56,7 @@
 .logo {
   color: $color-text;
   display: inline-block;
+  padding: $space-2 $space-3;
   text-decoration: none;
 
   &:hover {
@@ -83,9 +84,7 @@
   letter-spacing: 2px;
   line-height: $line-height-tight;
   margin-bottom: 0;
-  padding: $space-2 $space-3;
   text-transform: uppercase;
-  width: fit-content;
 }
 
 .header-phone {
@@ -100,6 +99,7 @@
     color: $color-primary;
     font-size: $font-size-2xl;
     font-weight: 400;
+    padding: $space-2 $space-3;
 
     &:hover {
       color: $color-primary-dark;
