@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'components' as *;
 
 // ─── Page-Level Section Patterns ──────────────────────────────────────────────
 
@@ -79,12 +80,11 @@
 .philosophy-section {
   &__heading {
     color: $color-text;
-    font-family: $font;
+    @extend .heading--section;
     font-size: $font-size-page-title;
     font-weight: 400;
     letter-spacing: $letter-spacing-wide;
     margin-bottom: $space-5;
-    text-transform: uppercase;
   }
 
   &__grid {
@@ -195,12 +195,11 @@
 
   &__heading {
     color: $color-text;
-    font-family: $font;
+    @extend .heading--section;
     font-size: $font-size-page-title;
     font-weight: 400;
     letter-spacing: $letter-spacing-wide;
     margin-bottom: $space-3;
     text-align: left;
-    text-transform: uppercase;
   }
 }

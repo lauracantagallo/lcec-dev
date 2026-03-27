@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
-// ─── Buttons ──────────────────────────────────────────────────────────────────
 
+// ─── Buttons ──────────────────────────────────────────────────────────────────
 .btn {
   align-items: center;
   border: 2px solid transparent;
@@ -26,7 +26,7 @@
   }
 }
 
-.btn--primary {
+.btn--primary, .form-submit {
   background-color: $color-white;
   border-color: $color-white;
   color: $color-text;
@@ -35,9 +35,12 @@
     background-color: $color-primary-light;
     border-color: $color-primary-light;
   }
+  &:focus {
+    outline: 2px solid $color-primary-light;
+    outline-offset: 2px;
+  }
 }
 
-// Appears as plain text until hovered — then shows white bg + border
 .btn--ghost {
   background-color: transparent;
   border-color: $color-white;
@@ -48,6 +51,35 @@
     border-color: $color-white;
     color: $color-text;
   }
+}
+
+// ─── Card Base ───────────────────────────────────────────────────────────────
+.card {
+  background-color: $color-white;
+  box-shadow: $shadow-card;
+  color: $color-text;
+  padding: $space-5;
+}
+
+// ─── List Utility ────────────────────────────────────────────────────────────
+.list--disc {
+  list-style: disc;
+  padding-left: 1.3em;
+  li {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    margin-bottom: $space-1;
+  }
+}
+
+// ─── Section Heading Utility ────────────────────────────────────────────────
+.heading--section {
+  font-family: $font;
+  font-weight: 700;
+  line-height: $line-height-snug;
+  margin-bottom: $space-3;
+  font-size: $font-size-3xl;
+  text-transform: uppercase;
 }
 
 // ─── Announcement Bar ─────────────────────────────────────────────────────────
@@ -85,13 +117,11 @@
 }
 
 // ─── Statistics ───────────────────────────────────────────────────────────────
-
 .stats-grid {
   display: grid;
   gap: $space-3;
   grid-template-columns: 1fr;
   margin-top: $space-4;
-
   @media (min-width: #{$bp-tablet + 1px}) {
     gap: $space-4;
     grid-template-columns: repeat(3, 1fr);
@@ -148,24 +178,21 @@
 }
 
 // ─── Service Cards ────────────────────────────────────────────────────────────
-
 .services-grid {
   display: grid;
   gap: $space-4;
   grid-template-columns: 1fr;
   margin-top: $space-5;
-
   @media (min-width: #{$bp-tablet + 1px}) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.service-card {
-  background-color: $color-white;
-  box-shadow: $shadow-card;
-  color: $color-text;
-  padding: $space-5;
+.service-card, .training-card {
+  @extend .card;
+}
 
+.service-card {
   &__heading {
     color: $color-primary;
     font-family: $font;
@@ -174,27 +201,19 @@
     line-height: $line-height-snug;
     margin-bottom: $space-3;
   }
-
   &__description {
     color: $color-text-medium;
     font-size: $font-size-base;
     line-height: $line-height-loose;
     margin-bottom: $space-3;
   }
-
   &__features {
-    list-style: disc;
+    @extend .list--disc;
     margin: $space-3 0;
-    padding-left: 1.3em;
-
     li {
       color: $color-text;
-      font-size: $font-size-base;
-      line-height: $line-height-base;
-      margin-bottom: $space-1;
     }
   }
-
   &__case-study {
     color: $color-text-medium;
     font-size: $font-size-sm;
@@ -203,25 +222,7 @@
   }
 }
 
-// ─── Training Category Blocks ─────────────────────────────────────────────────
-
-.training-grid {
-  display: grid;
-  gap: $space-4;
-  grid-template-columns: 1fr;
-  margin-top: $space-4;
-
-  @media (min-width: #{$bp-tablet + 1px}) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .training-card {
-  background-color: $color-white;
-  box-shadow: $shadow-card;
-  color: $color-text;
-  padding: $space-5;
-
   &__heading {
     color: $color-primary;
     font-family: $font;
@@ -229,7 +230,6 @@
     font-weight: 700;
     margin-bottom: $space-2;
   }
-
   &__description {
     color: $color-text-medium;
     font-size: $font-size-base;
@@ -237,16 +237,12 @@
   }
 }
 
-// ─── Profile / Background List ────────────────────────────────────────────────
-
+// ─── Profile / Background List ───────────────────────────────────────────────
 .credentials-list {
-  list-style: disc;
+  @extend .list--disc;
   margin: $space-4 0;
-  padding-left: 1.3em;
-
   li {
     color: $color-text-on-dark;
-    font-size: $font-size-base;
     line-height: $line-height-loose;
     margin-bottom: $space-2;
   }

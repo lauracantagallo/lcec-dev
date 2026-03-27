@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'components' as *;
 
 // ─── Forms ────────────────────────────────────────────────────────────────────
 
@@ -90,31 +91,11 @@
 }
 
 .form-submit {
-  align-items: center;
-  background-color: $color-primary;
-  border: 2px solid $color-primary;
-  color: $color-white;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: $font;
+  @extend .btn--primary;
+  width: 100%;
   font-size: $font-size-base;
   font-weight: 700;
-  justify-content: center;
-  letter-spacing: $letter-spacing-wide;
   padding: $space-2 $space-5;
-  text-transform: uppercase;
-  transition: $transition-base;
-  width: 100%;
-
-  &:hover {
-    background-color: $color-primary-dark;
-    border-color: $color-primary-dark;
-  }
-
-  &:focus {
-    outline: 2px solid $color-primary;
-    outline-offset: 2px;
-  }
 }
 
 .form-privacy {
