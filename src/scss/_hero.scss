@@ -27,7 +27,8 @@
     width: 548px;
 
     @media (max-width: $bp-mobile) {
-      width: 352px;
+      margin-bottom: 0;
+      width: 100%;
     }
 
     @media (min-width: #{$bp-tablet + 1px}) {
@@ -42,8 +43,8 @@
       width: 548px;
 
       @media (max-width: $bp-mobile) {
-        height: 352px;
-        width: 352px;
+        height: auto;
+        width: 100%;
       }
 
       @media (min-width: #{$bp-tablet + 1px}) {
