@@ -100,8 +100,25 @@
 
   &__actions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: $space-3;
-    justify-content: center;
+    align-items: stretch;
+
+    // Make buttons full width on mobile
+    .btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: #{$bp-mobile + 1px}) {
+      flex-direction: row;
+      align-items: center;
+      .btn {
+        width: auto;
+        display: inline-flex;
+      }
+    }
   }
 }
