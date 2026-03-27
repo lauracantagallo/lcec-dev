@@ -48,9 +48,6 @@ $space-4:   24px;
 $space-5:   32px;
 $space-6:   40px;
 
-// ─── Golden Ratio ─────────────────────────────────────────────────────────────
-$measure-announcement: 36rem;
-
 // ─── Layout ───────────────────────────────────────────────────────────────────
 $container-md:   984px;
 $container-lg:  1140px;
@@ -69,9 +66,6 @@ $nav-mobile-z:      3;
 
 // ─── Transitions ──────────────────────────────────────────────────────────────
 $transition-base:   all 0.3s ease;
-$transition-nav:    transform 0.3s ease-in-out;
-$transition-slow:   all 0.5s;
 
 // ─── Shadows ──────────────────────────────────────────────────────────────────
-$shadow-dropdown:   0 3px 6px 3px rgba(0, 0, 0, 0.16);
 $shadow-card:       0 2px 6px 0 rgba(0, 0, 0, 0.2);

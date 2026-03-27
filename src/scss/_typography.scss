@@ -78,13 +78,8 @@ h6, .h6 {
 .text-primary { color: $color-primary; }
 .text-on-dark { color: $color-text-on-dark; }
 
-// Display / accent font
-.font$font {
-  font-family: $font;
-}
-
 // Section headings
-.section$font {
+.section-heading {
   font-family: $font;
   font-weight: 700;
   line-height: $line-height-snug;

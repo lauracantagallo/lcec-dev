@@ -91,7 +91,12 @@ description: "Connect with LC Education Consulting. Fill out the contact form or
 
       <div class="form-field">
         <label class="form-label" for="contact-method">Preferred Contact Method <span aria-hidden="true">*</span></label>
-        <input class="form-input" type="text" id="contact-method" name="contact_method" required placeholder="Email / Phone / Either" />
+        <select class="form-input" id="contact-method" name="contact_method" required>
+          <option value="">Select a method</option>
+          <option value="Email">Email</option>
+          <option value="Phone">Phone</option>
+          <option value="Either">Either</option>
+        </select>
       </div>
 
       <button type="submit" class="form-submit">Send</button>

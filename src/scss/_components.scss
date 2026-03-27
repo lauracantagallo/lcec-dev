@@ -55,7 +55,7 @@
   background-color: $color-primary-dark;
   color: $color-white;
   padding: $space-1 $space-3;
-  transition: $transition-slow;
+  transition: all 0.5s;
 
   &:hover {
     filter: invert(0.2);
@@ -81,7 +81,7 @@
     font-size: $font-size-base;
     font-weight: 400;
     letter-spacing: $letter-spacing-wide;
-    max-width: $measure-announcement;
+    max-width: 36rem;
     text-align: center;
     text-transform: uppercase;
     text-wrap: pretty;
@@ -310,6 +310,12 @@
 
       &:hover {
         color: $color-primary-light;
+      }
+
+      &:focus {
+        color: $color-primary-light;
+        outline: 2px solid $color-white;
+        outline-offset: 2px;
       }
     }
   }

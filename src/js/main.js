@@ -74,15 +74,37 @@ function initDropdowns() {
       if (e.key === 'Escape') { close(); btn.focus(); }
     });
 
-    dropdown.addEventListener('focusout', e => {
-      if (!dropdown.contains(e.relatedTarget) && !btn.contains(e.relatedTarget)) {
-        close();
-      }
+    // Use rAF so the browser settles focus before we check — handles null
+    // relatedTarget, cross-browser quirks, and clicks on non-focusable elements.
+    dropdown.addEventListener('focusout', () => {
+      requestAnimationFrame(() => {
+        if (
+          !dropdown.contains(document.activeElement) &&
+          !btn.contains(document.activeElement)
+        ) {
+          close();
+        }
+      });
     });
   });
 }
 
 // ─── Cookie banner ────────────────────────────────────────────────────────────
+
+const COOKIE_KEY   = 'lc_cookie_accepted';
+const ONE_YEAR_MS  = 365 * 24 * 60 * 60 * 1000;
+
+function cookieConsentAccepted() {
+  const stored = localStorage.getItem(COOKIE_KEY);
+  if (!stored) return false;
+  try {
+    const { expiry } = JSON.parse(stored);
+    return Date.now() < expiry;
+  } catch {
+    // Legacy value ('1') or malformed — treat as expired
+    return false;
+  }
+}
 
 function initCookieBanner() {
   const banner    = document.getElementById('cookie-banner');
@@ -90,13 +112,29 @@ function initCookieBanner() {
 
   if (!banner || !acceptBtn) return;
 
-  if (!localStorage.getItem('lc_cookie_accepted')) {
+  if (!cookieConsentAccepted()) {
     banner.classList.add('is-visible');
   }
 
   acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('lc_cookie_accepted', '1');
+    localStorage.setItem(COOKIE_KEY, JSON.stringify({ expiry: Date.now() + ONE_YEAR_MS }));
     banner.classList.remove('is-visible');
+  });
+}
+
+// ─── Contact form placeholder ──────────────────────────────────────────────────
+
+function initContactForm() {
+  const form   = document.querySelector('.contact-form');
+  const status = document.querySelector('.form-status');
+  if (!form) return;
+
+  // TODO: replace with real submission handler once backend is wired up
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (status) {
+      status.textContent = 'Form submission is not yet available. Please call or email us directly.';
+    }
   });
 }
 
@@ -106,4 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initDropdowns();
   initCookieBanner();
+  initContactForm();
 });

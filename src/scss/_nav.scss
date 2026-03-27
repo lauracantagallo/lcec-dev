@@ -105,6 +105,12 @@
     &:hover {
       color: $color-primary-dark;
     }
+
+    &:focus {
+      color: $color-primary-dark;
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
   }
 
   @media (max-width: $bp-mobile) {
@@ -217,7 +223,7 @@
 
 .nav__dropdown {
   background-color: $color-white;
-  box-shadow: $shadow-dropdown;
+  box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.16);
   display: none;
   left: auto;
   min-width: 220px;
@@ -281,6 +287,11 @@
   display: none;
   padding: $space-2;
 
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
   @media (max-width: $bp-tablet) {
     align-items: center;
     display: flex;
@@ -310,7 +321,7 @@
   position: fixed;
   top: 0;
   transform: translateX(-100%);
-  transition: $transition-nav;
+  transition: transform 0.3s ease-in-out;
   width: 85vw;
   z-index: $nav-mobile-z;
 

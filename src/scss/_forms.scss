@@ -130,6 +130,12 @@
     &:hover {
       color: $color-primary-dark;
     }
+
+    &:focus {
+      color: $color-primary-dark;
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
   }
 }
 
