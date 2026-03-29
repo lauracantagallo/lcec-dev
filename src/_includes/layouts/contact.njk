@@ -1,42 +1,39 @@
 ---
 layout: base.njk
-title: Contact
-description: "Connect with LC Education Consulting. Fill out the contact form or schedule a free 30-minute discovery call."
 ---
-
 <section class="page-title">
   <div class="container">
-    <h1 class="page-title__heading">Start a Conversation</h1>
+    <h1 class="page-title__heading">{{ page_title.heading }}</h1>
   </div>
 </section>
 
 <section class="section section--green">
   <div class="container">
     <div class="contact-info">
-      <h2 class="contact-info__heading">Office</h2>
+      <h2 class="contact-info__heading">{{ office.heading }}</h2>
       <address>
         <dl>
           <div class="contact-info__row">
             <dt class="contact-info__label">Location</dt>
-            <dd class="contact-info__value">Collingswood, New Jersey</dd>
+            <dd class="contact-info__value">{{ office.location }}</dd>
           </div>
           <div class="contact-info__row">
             <dt class="contact-info__label">Phone</dt>
             <dd class="contact-info__value">
-              <a href="tel:8563104483">856-310-4483</a>
+              <a href="{{ office.phone_href }}">{{ office.phone }}</a>
             </dd>
           </div>
           <div class="contact-info__row">
             <dt class="contact-info__label">E-Mail</dt>
             <dd class="contact-info__value">
-              <a href="mailto:laura@lceducationconsulting.com">laura@lceducationconsulting.com</a>
+              <a href="{{ office.email_href }}">{{ office.email }}</a>
             </dd>
           </div>
         </dl>
       </address>
     </div>
-    <p class="intro-section__body mt-5">Looking to connect with a trusted accessibility consultant? You&rsquo;re in the right place! LC Education Consulting is here to answer questions, learn about your goals, and connect you with the right services for your organization.</p>
-    <p class="intro-section__body mt-4">To get started, fill out the contact form below or schedule a free 30-minute discovery call. We&rsquo;re happy to schedule a free consultation.</p>
+    <p class="intro-section__body mt-5">{{ intro_body1 }}</p>
+    <p class="intro-section__body mt-4">{{ intro_body2 }}</p>
   </div>
 </section>
 
@@ -45,7 +42,7 @@ description: "Connect with LC Education Consulting. Fill out the contact form or
     <div role="status" aria-live="polite" aria-atomic="true" class="form-status"></div>
     <form class="contact-form" name="contact" action="/contact-success/" method="post" netlify data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
-      <h2 class="contact-form__heading">Let&rsquo;s Talk About Your Needs</h2>
+      <h2 class="contact-form__heading">{{ form.heading }}</h2>
 
       {# Honeypot — hidden from real users, used by Netlify spam filtering #}
       <input type="text" name="bot-field" autocomplete="off" tabindex="-1" value="" />
@@ -102,27 +99,25 @@ description: "Connect with LC Education Consulting. Fill out the contact form or
 
       <button type="submit" class="form-submit">Send</button>
 
-      <p class="form-privacy">
-        Your information will only be used to respond to your inquiry and will never be shared or sold.
-      </p>
+      <p class="form-privacy">{{ form.privacy_text }}</p>
     </form>
   </div>
 </section>
 
 <section class="section section--dark">
   <div class="container text-center">
-    <h2 class="section-heading text-white">LC Education Consulting</h2>
-    <p><a href="tel:8563104483" class="text-on-dark text-xl">856-310-4483</a></p>
-    <p><a href="mailto:laura@lceducationconsulting.com" class="text-on-dark">laura@lceducationconsulting.com</a></p>
+    <h2 class="section-heading text-white">{{ contact_block.heading }}</h2>
+    <p><a href="{{ contact_block.phone_href }}" class="text-on-dark text-xl">{{ contact_block.phone }}</a></p>
+    <p><a href="{{ contact_block.email_href }}" class="text-on-dark">{{ contact_block.email }}</a></p>
   </div>
 </section>
 
 <section class="section section--green">
   <div class="container">
     <div class="cta-block">
-      <h2 class="cta-block__heading">Ready to get started?</h2>
-      <p class="cta-block__subheading">Book a free 30-minute discovery call</p>
-      <a href="https://calendar.app.google/1HUZPbZWSLjXKS9b6" class="btn btn--primary" target="_blank" rel="noopener">Schedule Call</a>
+      <h2 class="cta-block__heading">{{ cta.heading }}</h2>
+      <p class="cta-block__subheading">{{ cta.subheading }}</p>
+      <a href="{{ cta.button_url }}" class="btn btn--primary" target="_blank" rel="noopener">{{ cta.button_text }}</a>
     </div>
   </div>
 </section>

@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+<section class="page-title">
+  <div class="container">
+    <h1 class="page-title__heading">{{ page_title.heading }}</h1>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="intro-section">
+      <h2 class="intro-section__heading">{{ intro.heading }}</h2>
+      <p class="intro-section__subheading">{{ intro.subheading }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="container">
+    <div class="training-grid">
+      {% for training in trainings %}
+      <article class="training-card">
+        <h3 class="training-card__heading">{{ training.heading }}</h3>
+        <p class="training-card__description">{{ training.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="cta-block">
+      <h2 class="cta-block__heading">{{ cta.heading }}</h2>
+      <p class="cta-block__subheading">{{ cta.subheading }}</p>
+      <a href="{{ cta.button_url }}" class="btn btn--primary" target="_blank" rel="noopener">{{ cta.button_text }}</a>
+    </div>
+  </div>
+</section>

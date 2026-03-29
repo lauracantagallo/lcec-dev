@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+<section class="page-title">
+  <div class="container">
+    <h1 class="page-title__heading">{{ page_title.heading }}</h1>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="portfolio-intro">
+      <p>{{ intro_body }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <h2 class="section-heading text-white">{{ projects_heading }}</h2>
+    <ul class="portfolio-list">
+      {% for project in projects %}
+      <li>{{ project }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="cta-block">
+      <h2 class="cta-block__heading">{{ cta.heading }}</h2>
+      <p class="cta-block__subheading">{{ cta.subheading }}</p>
+      <a href="{{ cta.button_url }}" class="btn btn--primary" target="_blank" rel="noopener">{{ cta.button_text }}</a>
+    </div>
+  </div>
+</section>
