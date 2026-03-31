@@ -7,9 +7,10 @@
   position: relative;
   z-index: $nav-dropdown-z;
   margin: 0;
-  padding: 0;
+  padding: 0 0 $space-3;
   @media (min-width: #{$bp-tablet + 1px}) {
     padding-top: $space-6;
+    padding-bottom: $space-5;
   }
 }
 
