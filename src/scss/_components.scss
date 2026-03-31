@@ -318,6 +318,10 @@
 
 // ─── CTA Block ────────────────────────────────────────────────────────────────
 
+.section--blue .cta-block__subheading {
+  color: $color-white;
+}
+
 .cta-block {
   padding: $space-6 $space-4;
   text-align: center;

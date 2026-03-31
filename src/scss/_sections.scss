@@ -185,6 +185,19 @@
   }
 }
 
+// ─── Portfolio intro ─────────────────────────────────────────────────────────
+
+.portfolio-intro {
+  &__heading {
+    color: $color-white;
+    font-family: $font;
+    font-size: $font-size-xl;
+    font-weight: 400;
+    letter-spacing: $letter-spacing-wider;
+    margin-bottom: $space-4;
+  }
+}
+
 // ─── Connect/Social section ───────────────────────────────────────────────────
 
 .social-section {
