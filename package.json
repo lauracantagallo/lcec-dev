@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run dev:11ty\" \"npm run dev:sass\" \"npm run dev:js\"",
-    "dev:11ty": "eleventy --serve --incremental",
+    "dev:11ty": "eleventy --serve --incremental --port 8080",
     "dev:sass": "sass src/scss/main.scss dist/css/main.css --watch --style=expanded --source-map",
     "dev:js": "node build/js.js --watch",
     "build": "npm run build:clean && npm run build:11ty && npm run build:sass && npm run build:js",
