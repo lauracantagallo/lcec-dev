@@ -7,8 +7,9 @@ page_title:
 office:
   heading: "Office"
   location: "Collingswood, New Jersey"
+  map_url: "https://maps.app.goo.gl/JTAsUhP1N4WcEaCt5"
   phone: "856-310-4483"
-  phone_href: "tel:8563104483"
+  phone_href: "tel:+18563104483"
   email: "laura@lceducationconsulting.com"
   email_href: "mailto:laura@lceducationconsulting.com"
 intro_heading: "Looking to connect with a trusted accessibility consultant?"
