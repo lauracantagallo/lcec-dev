@@ -1,7 +1,7 @@
 ---
 layout: contact-success.njk
 title: Message Sent
-description: "Thank you for reaching out to LC Education Consulting. We'll be in touch shortly."
+description: "Thank you for reaching out to LC Education Consulting. We\u2019ll be in touch shortly."
 page_title:
   heading: "Message Sent"
 body1: "Thank you for reaching out! We\u2019ve received your message and will be in touch shortly."
@@ -14,7 +14,7 @@ contact_block:
   email_href: "mailto:laura@lceducationconsulting.com"
 cta:
   heading: "Want to connect sooner?"
-  subheading: "Book a free 30-minute discovery call"
+  subheading: "Book a Free 30-Minute Discovery Call"
   button_text: "Schedule Call"
   button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"
 ---

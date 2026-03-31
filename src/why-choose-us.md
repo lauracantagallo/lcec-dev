@@ -24,7 +24,7 @@ quote:
   attribution: "American College of Physicians, ACP MKSAP Team"
 cta:
   heading: "Ready to get started?"
-  subheading: "Book a free 30-minute discovery call"
+  subheading: "Book a Free 30-Minute Discovery Call"
   button_text: "Schedule Call"
   button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"
 ---

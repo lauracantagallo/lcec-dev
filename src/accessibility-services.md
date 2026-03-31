@@ -40,7 +40,7 @@ services:
       - "Follow-up review available after remediation"
 cta:
   heading: "Ready to get started?"
-  subheading: "Book a free 30-minute discovery call"
+  subheading: "Book a Free 30-Minute Discovery Call"
   button_text: "Schedule Call"
   button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"
 ---

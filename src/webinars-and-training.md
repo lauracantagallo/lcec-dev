@@ -6,7 +6,7 @@ permalink: /webinars-and-training/
 page_title:
   heading: "Webinars & Training"
 intro:
-  heading: "Webinars and Trainings"
+  heading: "Webinars and Training"
   subheading: "Customized professional development for K\u201312 schools, higher education institutions, and organizations on assistive technology, digital accessibility, built-in accessibility features, and inclusive practices, available in-person in the New Jersey/Philadelphia area or virtually nationwide. Travel outside this area is available upon request."
 trainings:
   - heading: "Assistive Technology"
@@ -19,7 +19,7 @@ trainings:
     description: "Professional development designed to help teams create more accessible, supportive, and inclusive experiences."
 cta:
   heading: "Ready to get started?"
-  subheading: "Book a free 30-minute discovery call"
+  subheading: "Book a Free 30-Minute Discovery Call"
   button_text: "Schedule Call"
   button_url: "https://calendar.app.google/1HUZPbZWSLjXKS9b6"
 ---
