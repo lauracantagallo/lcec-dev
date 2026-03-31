@@ -1,110 +1,137 @@
-# LC Education Consulting - Website
+# LC Education Consulting — Website
 
-A locally-hosted version of the LC Education Consulting website with all assets included for offline functionality.
+Source repository for the LC Education Consulting website, built with Eleventy, Sass, and esbuild. Deployed via Netlify.
+
+## Tech Stack
+
+| Layer | Tool |
+| ----- | ---- |
+| Static site generator | [Eleventy 3.x](https://www.11ty.dev/) |
+| Templating | Nunjucks (`.njk`) |
+| CSS | Sass (SCSS) → compiled to `dist/css/main.css` |
+| JavaScript | esbuild → compiled to `dist/js/main.js` |
+| Forms | Netlify Forms with reCAPTCHA |
+| Fonts | Google Fonts CDN — Lato 400 & 700 only |
+| Analytics | Umami (replace `YOUR_WEBSITE_ID` in `head.njk`) |
 
 ## Project Structure
 
 ```
 lcec/
-├── fonts/                       # 21 Google Fonts WOFF2 files
-│   ├── cabin-*.woff2
-│   ├── lato-*.woff2
-│   ├── bitter-*.woff2
-│   └── lobster-two-*.woff2
-├── images/                      # SVG graphics + legacy raster files
-│   ├── favicon.svg              # Favicon in SVG format
-│   ├── lc-logo.svg              # Company logo in SVG format
-│   ├── background-pattern.svg   # Decorative background pattern
-│   ├── avatar-placeholder.svg   # Profile image placeholder
-│   └── LC LOGO-3adc54b.jpg      # Legacy raster logo (not in use)
-├── index.html                   # Homepage
-├── contact.html                 # Contact page
-├── our-story.html               # About/company history page
-├── why-choose-us.html           # Value proposition page
-├── accessibility-services.html  # Services page
-├── portfolio.html               # Project portfolio page
-├── webinars-&-training.html     # Training/webinar offerings
-├── manifest.webmanifest         # PWA manifest
-├── sw.js                        # Service Worker for offline support
-├── README.md                    # This file
-└── lcec.code-workspace          # VS Code workspace configuration
+├── src/
+│   ├── _data/
+│   │   └── site.json              # Global site metadata (URL, phone, email, etc.)
+│   ├── _includes/
+│   │   ├── layouts/               # Page-level Nunjucks layouts
+│   │   │   ├── base.njk           # Base HTML shell
+│   │   │   ├── index.njk          # Homepage
+│   │   │   ├── our-story.njk
+│   │   │   ├── why-choose-us.njk
+│   │   │   ├── accessibility-services.njk
+│   │   │   ├── portfolio.njk
+│   │   │   ├── webinars-and-training.njk
+│   │   │   ├── contact.njk
+│   │   │   └── contact-success.njk
+│   │   └── partials/              # Reusable Nunjucks partials
+│   │       ├── head.njk           # <head> with SEO, OG, JSON-LD
+│   │       ├── header.njk         # Site header and nav
+│   │       ├── footer.njk         # Site footer
+│   │       ├── social-section.njk # "Connect With Us" LinkedIn section
+│   │       ├── cta-schedule.njk   # "Ready to Get Started?" blue CTA banner
+│   │       └── cookie-banner.njk  # Cookie consent banner
+│   ├── scss/
+│   │   ├── main.scss              # Entry point — imports all partials
+│   │   ├── _variables.scss        # Design tokens (colors, spacing, type)
+│   │   ├── _reset.scss            # CSS reset and base element styles
+│   │   ├── _layout.scss           # Page wrap, container, section modifiers
+│   │   ├── _typography.scss       # Heading scale, body link styles
+│   │   ├── _nav.scss              # Site header and navigation
+│   │   ├── _hero.scss             # Homepage hero section
+│   │   ├── _sections.scss         # Page section components
+│   │   ├── _components.scss       # Buttons, cards, CTA blocks, social links
+│   │   ├── _forms.scss            # Contact form styles
+│   │   ├── _footer.scss           # Site footer
+│   │   ├── _utilities.scss        # Utility classes and external link icon
+│   │   └── _cookie-banner.scss    # Cookie banner styles
+│   ├── js/
+│   │   └── main.js                # Nav, cookie banner, form validation, external links
+│   ├── img/                       # Images (copied to dist/img at build)
+│   ├── static/
+│   │   └── _headers               # Netlify HTTP headers config
+│   ├── index.md                   # Homepage content (frontmatter data)
+│   ├── our-story.md
+│   ├── why-choose-us.md
+│   ├── accessibility-services.md
+│   ├── portfolio.md
+│   ├── webinars-and-training.md
+│   ├── contact.md
+│   └── contact-success.md
+├── build/
+│   ├── js.js                      # esbuild script (minifies on build, watches on dev)
+│   └── clean.js                   # Cleans dist/ before build
+├── dist/                          # Compiled output (not committed)
+├── .eleventy.js                   # Eleventy config (HTML minification, passthrough)
+├── manifest.webmanifest           # PWA manifest
+└── package.json
 ```
 
-## Asset Inventory
+## Page Content
 
-### Fonts
-- **Source**: Google Fonts CDN (https://fonts.googleapis.com)
-- **Families**: Cabin, Lato, Bitter, Lobster Two
-- **Variants**: All weights (100, 300, 400, 700, 900) with italic options
-- **Benefits**: CDN delivery, automatic updates, no storage needed
+All page content (headings, body copy, CTA text, etc.) lives in the frontmatter of the `.md` files in `src/`. Layouts read these values via Nunjucks template variables. To update copy, edit the relevant `.md` file — no template changes needed.
 
-### Images (5 files)
-- **favicon.svg** (335 bytes) - Scalable favicon with "LC" initials
-- **lc-logo.svg** (453 bytes) - Brand logo with circular background
-- **background-pattern.svg** (1,101 bytes) - Decorative gradient and shapes
-- **avatar-placeholder.svg** (490 bytes) - Generic user profile avatar
-- **LC LOGO-3adc54b.jpg** (139,392 bytes) - Legacy raster logo (archived)
-- **Location**: `public/assets/images/`
+Global data shared across all pages (site URL, phone, email, founder info) is in `src/_data/site.json`.
 
-## Serving the Website
+## Development
 
-### Option 1: Simple HTTP Server (Python)
-```powershell
-python -m http.server 8000
-# Visit http://localhost:8000 in your browser
+```bash
+npm install
+npm run dev
 ```
 
-### Option 2: Simple HTTP Server (Node.js)
-```powershell
-npx http-server
+Runs three watchers in parallel:
+
+- Eleventy dev server at `http://localhost:8080`
+- Sass (expanded, with source maps)
+- esbuild (unminified, with source maps)
+
+## Production Build
+
+```bash
+npm run build
 ```
 
-### Option 3: Local IIS
-Point your web server's root to the root `lcec/` directory.
+1. Cleans `dist/`
+2. Eleventy compiles templates → minifies HTML (removes comments, collapses whitespace)
+3. Sass compiles → compressed CSS (comments stripped)
+4. esbuild bundles → minified JS (comments stripped)
 
-### Option 4: Development with VS Code Live Server
-Install the Live Server extension and right-click `index.html` → "Open with Live Server"
+## Design Tokens
 
-## Key Features
+All spacing, color, and typography values are defined as Sass variables in `src/scss/_variables.scss`. Update tokens there to propagate changes site-wide.
 
-- **Offline Support**: Every asset is included locally; service worker enables offline viewing
-- **PWA Manifest**: `manifest.webmanifest` enables installation as a progressive web app
-- **Vector Graphics**: All images are SVG format for crisp display at any resolution
-- **Google Fonts**: All 21 font files available locally with fallback support
-- **No External Dependencies**: Completely self-contained; no CDN calls required
+Key tokens:
 
-## Development Workflow
+| Token | Value | Usage |
+| ----- | ----- | ----- |
+| `$color-primary` | `#556b2f` | Olive green — buttons, links, headings |
+| `$color-primary-dark` | `#364519` | Dark green — hover states |
+| `$color-primary-light` | `#e3fcc2` | Light green — card backgrounds |
+| `$color-accent` | `#1e4d7b` | Steel blue — banner sections |
+| `$font-size-page-title` | `1.875rem` | Page/section title headings |
+| `$space-4` | `24px` | Standard component spacing |
+| `$space-5` | `32px` | Section-level spacing |
 
-### To Update Asset References
-If you modify HTML files and add new assets:
+## Deployment
 
-1. **Add fonts**: Place WOFF2 files in `public/assets/fonts/`
-2. **Add images**: Place SVG files in `public/assets/images/` (or use utilities in `scripts/`)
-3. **Update HTML**: Reference using relative paths:
-   - Fonts: `<link rel="stylesheet" href="/assets/fonts/...">`
-   - Images: `<img src="/assets/images/..." alt="...">`
+The site deploys to Netlify. Build command: `npm run build`. Publish directory: `dist/`.
 
-### Utility Scripts (in `scripts/`)
-- Run from the root directory (`lcec/`)
-- Use `./scripts/scriptname.ps1` in PowerShell
-- Scripts handle bulk URL replacement and asset management
+Netlify Features in use:
 
-## Browser Compatibility
-
-- **Modern Browsers**: Full support (Chrome, Firefox, Safari, Edge)
-- **WOFF2 Fonts**: Supported in all modern browsers; fallback to system fonts if unsupported
-- **SVG Images**: Full support in all modern browsers
-- **Service Worker**: Requires HTTPS in production; works with localhost during development
+- **Forms** — Contact form with reCAPTCHA (enable reCAPTCHA in Netlify dashboard under Site configuration → Forms → Spam filters)
+- **Headers** — Custom HTTP headers via `src/static/_headers`
 
 ## Notes
 
-- The `docs/` folder contains HTTrack cache artifacts and backups for reference
-- All external CDN URLs have been replaced with local file paths
-- The website is fully functional offline
-- Original source: https://lceducationconsulting.com (downloaded with HTTrack)
-
----
-
-**Last Updated**: March 2026  
-**Project**: LC Education Consulting Static Website  
-**Status**: Fully localized with offline support
+- Umami analytics ID must be set in `src/_includes/partials/head.njk` (search `YOUR_WEBSITE_ID`)
+- The Map button on the contact page uses `href="#"` as a placeholder — replace with a real Google Maps URL when available
+- `site.url` is defined in both `.eleventy.js` (as `addGlobalData`) and `src/_data/site.json` — keep these in sync
