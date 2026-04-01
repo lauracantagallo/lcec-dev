@@ -7,11 +7,16 @@
   padding-bottom: 0;
   .container > :last-child { margin-block-end: 0; }
 }
+.container + .section--flush-top {
+  padding-top: 0;
+  border-top: none;
+}
 .section--flush-top {
   padding-top: 1em;
   border-top: solid 1px $color-primary-dark;
   @media (min-width: #{$bp-tablet + 1px}) {
     padding-top: 0;
+    border-top: none;
   }
 }
 .divider {

@@ -160,14 +160,10 @@
 
   &__value {
     color: $color-text;
-    font-size: $font-size-3xl;
+    font-size: $font-size-display;
     font-weight: 700;
     line-height: $line-height-tight;
     margin-bottom: $space-16px;
-
-    @media (min-width: #{$bp-tablet + 1px}) {
-      font-size: $font-size-page-title;
-    }
   }
 
   &__label {

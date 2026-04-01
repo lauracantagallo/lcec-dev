@@ -52,13 +52,13 @@
     background-color: $color-primary;
     color: $color-text-on-dark;
     flex: 1;
-    max-width: 600px;
     padding: $space-32px $space-24px;
     text-align: center;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       display: flex;
       flex-direction: column;
+      max-width: 600px;
       justify-content: center;
       padding: $space-40px;
     }

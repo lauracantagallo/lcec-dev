@@ -63,13 +63,11 @@
   @media (min-width: #{$bp-tablet + 1px}) {
     display: block;
     margin: 0;
+    max-width: 100%;
     position: relative;
     text-align: left;
     width: auto;
     z-index: 1;
-  }
-  @media (min-width: #{$bp-desktop + 1px}) {
-    max-width: 100%;
   }
 }
 
