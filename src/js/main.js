@@ -27,10 +27,24 @@ function initNavigation() {
   const nav      = document.getElementById('mobile-nav');
   const overlay  = document.getElementById('mobile-nav-overlay');
 
+  function setNavFocusable(focusable) {
+    nav.querySelectorAll('a, button').forEach(el => {
+      if (focusable) {
+        el.removeAttribute('tabindex');
+      } else {
+        el.setAttribute('tabindex', '-1');
+      }
+    });
+  }
+
   if (toggle && nav) {
+    // Nav starts hidden — disable focus on its children
+    setNavFocusable(false);
+
     function openNav() {
       toggleClass(nav, 'is-open', true);
       setAria(nav, 'aria-hidden', 'false');
+      setNavFocusable(true);
       toggleClass(overlay, 'is-visible', true);
       document.body.classList.add('nav-open');
       setAria(toggle, 'aria-expanded', 'true');
@@ -64,6 +78,7 @@ function initNavigation() {
     function closeNav() {
       toggleClass(nav, 'is-open', false);
       setAria(nav, 'aria-hidden', 'true');
+      setNavFocusable(false);
       toggleClass(overlay, 'is-visible', false);
       document.body.classList.remove('nav-open');
       setAria(toggle, 'aria-expanded', 'false');
