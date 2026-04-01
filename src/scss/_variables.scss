@@ -70,13 +70,14 @@ $bp-tablet:  1023px;
 $bp-desktop: 1279px;
 
 // ─── Nav ──────────────────────────────────────────────────────────────────────
-$nav-height:        56px;
+$nav-height:        $space-56px;
 $nav-dropdown-z:    1;
 $nav-mobile-z:      3;
 
 // ─── Focus ────────────────────────────────────────────────────────────────────
 $focus-outline-stroke: 2px solid;
 $focus-outline-offset: 2px;
+$focus-outline-radius: 0.1em;
 
 // ─── Transitions ──────────────────────────────────────────────────────────────
 $transition-base:   all 0.3s ease;
