@@ -252,19 +252,191 @@ function initExternalLinks() {
   });
 }
 
+// ─── Announcement bar toggle ─────────────────────────────────────────────────
+const ANNOUNCE_COLLAPSED_KEY = 'lc_announce_collapsed';
+
+function initAnnouncementToggle() {
+  const bar     = document.getElementById('announcement-bar');
+  const btn     = bar && bar.querySelector('.announcement-bar__toggle');
+  const content = document.getElementById('announcement-bar-content');
+  if (!bar || !btn || !content) return;
+
+  function setCollapsed(collapsed) {
+    bar.classList.toggle('is-collapsed', collapsed);
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    btn.setAttribute('aria-label', collapsed ? 'Expand announcement' : 'Collapse announcement');
+    localStorage.setItem(ANNOUNCE_COLLAPSED_KEY, collapsed ? '1' : '0');
+  }
+
+  // Restore persisted state before first paint
+  if (localStorage.getItem(ANNOUNCE_COLLAPSED_KEY) === '1') setCollapsed(true);
+
+  btn.addEventListener('click', () => setCollapsed(!bar.classList.contains('is-collapsed')));
+}
+
+// ─── Footer nav toggle ───────────────────────────────────────────────────────
+const FOOTER_NAV_COLLAPSED_KEY = 'lc_footer_nav_collapsed';
+
+function initFooterNavToggle() {
+  const wrapper = document.getElementById('footer-nav-content');
+  const btn     = document.querySelector('.footer-nav-toggle');
+  if (!wrapper || !btn) return;
+
+  function setCollapsed(collapsed) {
+    wrapper.classList.toggle('is-collapsed', collapsed);
+    btn.classList.toggle('is-collapsed', collapsed);
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    btn.setAttribute('aria-label', collapsed ? 'Expand footer navigation' : 'Collapse footer navigation');
+    localStorage.setItem(FOOTER_NAV_COLLAPSED_KEY, collapsed ? '1' : '0');
+  }
+
+  // Restore persisted state before first paint
+  if (localStorage.getItem(FOOTER_NAV_COLLAPSED_KEY) === '1') setCollapsed(true);
+
+  btn.addEventListener('click', () => setCollapsed(!wrapper.classList.contains('is-collapsed')));
+}
+
+// ─── Exit Modal ──────────────────────────────────────────────────────────────
+function initExitModal() {
+  const modal = document.getElementById('exit-modal');
+  if (!modal) return;
+
+  const panel       = modal.querySelector('.exit-modal__panel');
+  const titleEl     = document.getElementById('exit-modal-title');
+  const messageEl   = document.getElementById('exit-modal-message');
+  const hintEl      = document.getElementById('exit-modal-hint');
+  const countdownEl = document.getElementById('exit-modal-countdown');
+  const goBtn       = modal.querySelector('.exit-modal__go');
+  const cancelBtn   = modal.querySelector('.exit-modal__cancel');
+
+  let timer         = null;
+  let pendingAction = null;
+  let triggerEl     = null;
+
+  function openModal(config, trigger) {
+    triggerEl     = trigger;
+    pendingAction = config.action;
+
+    titleEl.textContent   = config.title;
+    messageEl.textContent = config.message;
+
+    if (config.hint) {
+      hintEl.textContent = config.hint;
+      hintEl.hidden = false;
+    } else {
+      hintEl.textContent = '';
+      hintEl.hidden = true;
+    }
+
+    if (config.countdown !== false) {
+      const label = config.countdownLabel || 'Continuing';
+      countdownEl.innerHTML = label + ' in <strong>5</strong>\u2026';
+      countdownEl.hidden = false;
+      const secEl = countdownEl.querySelector('strong');
+      let seconds = 5;
+      timer = setInterval(() => {
+        seconds--;
+        secEl.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          timer = null;
+          doAction();
+        }
+      }, 1000);
+    } else {
+      countdownEl.innerHTML = '';
+      countdownEl.hidden = true;
+    }
+
+    modal.classList.add('is-visible');
+    document.body.classList.add('modal-open');
+    cancelBtn.focus();
+  }
+
+  function closeModal() {
+    if (timer) { clearInterval(timer); timer = null; }
+    modal.classList.remove('is-visible');
+    document.body.classList.remove('modal-open');
+    if (triggerEl) { triggerEl.focus(); triggerEl = null; }
+  }
+
+  function doAction() {
+    const action = pendingAction;
+    closeModal();
+    action();
+  }
+
+  goBtn.addEventListener('click', doAction);
+  cancelBtn.addEventListener('click', closeModal);
+
+  // Click outside panel to dismiss
+  modal.addEventListener('click', e => {
+    if (!panel.contains(e.target)) closeModal();
+  });
+
+  onEscape(() => { if (modal.classList.contains('is-visible')) closeModal(); });
+
+  // Focus trap
+  modal.addEventListener('keydown', e => {
+    if (e.key !== 'Tab' || !modal.classList.contains('is-visible')) return;
+    const focusable = Array.from(modal.querySelectorAll('button'));
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  });
+
+  // Intercept LinkedIn links
+  document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const href = link.href;
+      openModal({
+        title: 'You\'re leaving this site',
+        message: 'You\'re being redirected to LinkedIn in a new tab.',
+        countdownLabel: 'Taking you there',
+        action: () => window.open(href, '_blank', 'noopener noreferrer')
+      }, link);
+    });
+  });
+
+  // Intercept vCard download
+  document.querySelectorAll('.social-link--vcard').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const href = link.href;
+      openModal({
+        title: 'Downloading contact card',
+        message: 'A .vcf contact file will be saved to your device.',
+        hint: 'Open the file to add Laura Cantagallo to your contacts.',
+        countdown: false,
+        action: () => {
+          const a = document.createElement('a');
+          a.href = href;
+          a.download = 'laura-cantagallo.vcf';
+          document.body.appendChild(a);
+          a.click();
+
+          document.body.removeChild(a);
+        }
+      }, link);
+    });
+  });
+}
+
 // ─── Single Init Function ─────────────────────────────────────────────────--
 function initUI() {
   initNavigation();
   initCookieBanner();
   initContactForm();
   initExternalLinks();
+  initAnnouncementToggle();
+  initFooterNavToggle();
+  initExitModal();
 }
 
 document.addEventListener('DOMContentLoaded', initUI);
 
-// ─── Performance Suggestions (not implemented, for future consideration) ────
-// 1. Defer non-critical JS: Add 'defer' to script tag in HTML for faster page load.
-// 2. Minify JS for production (already handled if using a bundler/minifier).
-// 3. Use passive event listeners for scroll/touch events if added in future.
-// 4. Consider code splitting if JS grows larger.
-// 5. Use IntersectionObserver for lazy-loading images or content if needed.
