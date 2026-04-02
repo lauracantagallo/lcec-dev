@@ -3,6 +3,7 @@
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
+
 .site-footer {
   background-color: $color-primary;
   color: $color-text-on-dark;
@@ -15,6 +16,7 @@
     padding: $space-32px 0 $space-24px;
   }
 }
+
 
 .footer-inner {
   @include flexbox(column, center);
@@ -31,11 +33,12 @@
 
   .divider {
     border-top-color: $color-primary-light;
-    margin: 0;
+    margin: $space-16px 0 0;
     opacity: 0.35;
     width: 100%;
   }
 }
+
 
 .footer-nav-wrapper {
   width: 100%;
@@ -51,19 +54,20 @@
   }
 }
 
+
 .footer-nav-toggle {
-  background-color: $color-primary;
+  align-items: center;
+  background-color: transparent;
   border: none;
   border-radius: $space-8px $space-8px 0 0;
-  color: $color-text-on-dark;
+  color: $color-primary-dark;
   cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: center;
   left: 50%;
   padding: $space-8px $space-16px $space-4px;
   position: absolute;
-  top: 0;
+  top: 1px;
   transform: translate(-50%, -100%);
   z-index: 2;
 
@@ -72,11 +76,14 @@
   }
 
   &:focus {
-    @include focus-outline($color-white);
+    @include focus-outline($color-primary-dark);
   }
 
-  &[aria-expanded="false"] svg {
+  & svg {
     transform: rotate(180deg);
+  }
+  &.is-collapsed svg {
+    transform: rotate(0deg);
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
@@ -84,11 +91,12 @@
   }
 }
 
+
 .footer-nav {
   &__list {
     @include flexbox(column);
     gap: $space-8px;
-    margin: 0;
+    margin: $space-8px 0 0;
     padding: 0;
 
     @media (min-width: #{$bp-tablet + 1px}) {
@@ -96,6 +104,7 @@
       flex-wrap: wrap;
       gap: $space-8px $space-16px;
       justify-content: center;
+      margin: 0;
     }
   }
 
@@ -125,6 +134,7 @@
   }
 }
 
+
 .footer-brand {
   color: $color-text-on-dark;
   font-size: $font-size-sm;
@@ -132,6 +142,7 @@
   letter-spacing: $letter-spacing-body;
   text-transform: uppercase;
 }
+
 
 .footer-brand,
 .footer-phone {
@@ -154,6 +165,7 @@
     }
   }
 }
+
 
 .footer-copy {
   color: $color-text-on-dark;

@@ -284,6 +284,7 @@ function initFooterNavToggle() {
 
   function setCollapsed(collapsed) {
     wrapper.classList.toggle('is-collapsed', collapsed);
+    btn.classList.toggle('is-collapsed', collapsed);
     btn.setAttribute('aria-expanded', String(!collapsed));
     btn.setAttribute('aria-label', collapsed ? 'Expand footer navigation' : 'Collapse footer navigation');
     localStorage.setItem(FOOTER_NAV_COLLAPSED_KEY, collapsed ? '1' : '0');
