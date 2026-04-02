@@ -1,0 +1,262 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Local development: run `npx decap-server` alongside `npm run dev`
+local_backend: true
+
+media_folder: src/img
+public_folder: /img
+
+collections:
+
+  # ── Site-wide settings ───────────────────────────────────────────────────────
+  - name: settings
+    label: Settings
+    files:
+
+      - name: site
+        label: Site Info
+        file: src/_data/site.json
+        fields:
+          - { label: Site Name, name: name, widget: string }
+          - { label: Site URL, name: url, widget: string }
+          - { label: Phone (E.164), name: phone, widget: string, hint: "e.g. +18563104483" }
+          - { label: Email, name: email, widget: string }
+          - { label: City, name: city, widget: string }
+          - { label: State, name: state, widget: string }
+          - { label: Country, name: country, widget: string }
+          - { label: Founding Year, name: foundingDate, widget: string }
+          - { label: Founder Name, name: founder, widget: string }
+
+      - name: office
+        label: Office / Contact Info
+        file: src/_data/office.json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Location, name: location, widget: string }
+          - { label: Phone (display), name: phone, widget: string }
+          - { label: Phone (href), name: phone_href, widget: string, hint: "e.g. tel:8563104483" }
+          - { label: Email, name: email, widget: string }
+          - { label: Email (href), name: email_href, widget: string, hint: "e.g. mailto:laura@..." }
+          - { label: Google Maps URL, name: map_url, widget: string }
+
+      - name: announcement
+        label: Announcement Bar
+        file: src/_data/announcement.json
+        fields:
+          - { label: Announcement Text, name: announcement, widget: text, hint: "HTML allowed. Use <br> for line breaks." }
+
+      - name: cta
+        label: Global CTA Block
+        file: src/_data/cta.json
+        fields:
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - { label: Button Text, name: button_text, widget: string }
+          - { label: Button URL, name: button_url, widget: string }
+
+  # ── Testimonials ─────────────────────────────────────────────────────────────
+  - name: testimonials
+    label: Testimonials
+    file: src/_data/testimonials.json
+    fields:
+      - label: Testimonials
+        name: items
+        widget: list
+        fields:
+          - { label: ID, name: id, widget: string, hint: "Unique slug, e.g. acp-mksap" }
+          - { label: Attribution, name: attribution, widget: string }
+          - { label: Full Quote, name: text, widget: text }
+          - { label: Short Quote, name: short, widget: text, hint: "Used in condensed testimonial blocks" }
+
+  # ── Pages ────────────────────────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    files:
+
+      - name: homepage
+        label: Homepage
+        file: src/index.md
+        fields:
+          - { label: Description, name: description, widget: string }
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subheading, name: subheading, widget: text }
+              - { label: Primary CTA Text, name: cta_primary_text, widget: string }
+              - { label: Primary CTA URL, name: cta_primary_url, widget: string }
+              - { label: Secondary CTA Text, name: cta_secondary_text, widget: string }
+              - { label: Secondary CTA URL, name: cta_secondary_url, widget: string }
+          - { label: Stats Heading, name: stats_heading, widget: string }
+          - label: Stats
+            name: stats
+            widget: list
+            fields:
+              - { label: Value, name: value, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Pull Quote
+            name: quote
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: text }
+              - { label: Attribution, name: attribution, widget: string }
+
+      - name: our-story
+        label: Our Story
+        file: src/content/our-story.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Intro
+            name: intro
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Body Paragraphs
+                name: body
+                widget: list
+                field: { label: Paragraph, name: item, widget: text }
+          - label: Philosophy Section
+            name: philosophy
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Blocks
+                name: blocks
+                widget: list
+                fields:
+                  - { label: Heading, name: heading, widget: string }
+                  - { label: Image, name: image, widget: image }
+                  - { label: Body, name: body, widget: text }
+
+      - name: why-choose-us
+        label: Why Choose Us
+        file: src/content/why-choose-us.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Page Title
+            name: page_title
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subheading, name: subheading, widget: string }
+          - label: Body Paragraphs
+            name: body
+            widget: list
+            field: { label: Paragraph, name: item, widget: text }
+          - { label: Credentials Heading, name: credentials_heading, widget: string }
+          - label: Credentials
+            name: credentials
+            widget: list
+            field: { label: Credential, name: item, widget: string }
+          - label: Pull Quote
+            name: quote
+            widget: object
+            fields:
+              - { label: Text, name: text, widget: text }
+              - { label: Attribution, name: attribution, widget: string }
+
+      - name: accessibility-services
+        label: Accessibility Services
+        file: src/content/accessibility-services.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Intro
+            name: intro
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subheading, name: subheading, widget: string }
+          - { label: Services Section Heading, name: services_heading, widget: string }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Features
+                name: features
+                widget: list
+                field: { label: Feature, name: item, widget: string }
+              - { label: Case Study Label, name: case_study, widget: string, required: false }
+
+      - name: webinars-and-training
+        label: Webinars & Training
+        file: src/content/webinars-and-training.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Intro
+            name: intro
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subheading, name: subheading, widget: text }
+          - label: Training Topics
+            name: trainings
+            widget: list
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Description, name: description, widget: text }
+
+      - name: portfolio
+        label: Portfolio
+        file: src/content/portfolio.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Page Title
+            name: page_title
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+          - { label: Intro Body, name: intro_body, widget: text }
+          - { label: Projects Section Heading, name: projects_heading, widget: string }
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Image, name: image, widget: image }
+          - label: CTA
+            name: cta
+            widget: object
+            fields:
+              - { label: Heading, name: cta_heading, name: heading, widget: string }
+              - { label: Subheading, name: subheading, widget: string }
+              - { label: Button Text, name: button_text, widget: string }
+              - { label: Button URL, name: button_url, widget: string }
+
+      - name: contact
+        label: Contact
+        file: src/content/contact.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Page Title
+            name: page_title
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+          - { label: Intro Heading, name: intro_heading, widget: string }
+          - label: Intro Body Paragraphs
+            name: intro_body
+            widget: list
+            field: { label: Paragraph, name: item, widget: text }
+          - label: Contact Section
+            name: contact_section
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+          - label: Form
+            name: form
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Privacy Text, name: privacy_text, widget: string }
