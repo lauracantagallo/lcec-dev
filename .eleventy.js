@@ -1,6 +1,18 @@
 import { minify } from "html-minifier-terser";
 
 export default function (eleventyConfig) {
+  // Convert URL path to title-cased page name, e.g. /accessibility-services/ → "Accessibility Services"
+  eleventyConfig.addFilter("pathToTitle", function (url) {
+    if (!url || url === "/") return "";
+    const segment = url.replace(/^\/|\/$/g, "").split("/").pop();
+    return segment.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  });
+
+  // Format a date as YYYY-MM-DD for sitemaps
+  eleventyConfig.addFilter("toISODate", function (date) {
+    return new Date(date).toISOString().split("T")[0];
+  });
+
   eleventyConfig.addTransform("htmlmin", async function (content) {
     if ((this.page.outputPath || "").endsWith(".html")) {
       return await minify(content, {

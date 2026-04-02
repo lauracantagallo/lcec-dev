@@ -1,6 +1,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{% if title %}{{ title }} | {% endif %}LC Education Consulting</title>
+{% set _pageTitle = page.url | pathToTitle %}
+<title>LC Education Consulting{% if _pageTitle %} - {{ _pageTitle }}{% endif %}</title>
 <meta name="description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
 <meta name="keywords" content="digital accessibility consulting, WCAG compliance, web accessibility audit, VPAT writing, PDF remediation, assistive technology, ADA Title II, screen reader testing, accessibility training, special education consulting, New Jersey accessibility consultant" />
 <meta name="author" content="LC Education Consulting" />
@@ -9,19 +10,21 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="LC Education Consulting" />
-<meta property="og:title" content="{% if title %}{{ title }} | LC Education Consulting{% else %}LC Education Consulting{% endif %}" />
+<meta property="og:title" content="LC Education Consulting{% if _pageTitle %} - {{ _pageTitle }}{% endif %}" />
 <meta property="og:description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-<meta property="og:image" content="{{ site.url }}/img/lc-logo.svg" />
-<meta property="og:image:alt" content="LC Education Consulting logo" />
+<meta property="og:image" content="{{ site.url }}/img/og-image.png" />
+<meta property="og:image:alt" content="LC Education Consulting" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
 
 <!-- Twitter / X -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="{% if title %}{{ title }} | LC Education Consulting{% else %}LC Education Consulting{% endif %}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="LC Education Consulting{% if _pageTitle %} - {{ _pageTitle }}{% endif %}" />
 <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}Accessibility reviews, training, and digital accessibility support rooted in 16 years of special education experience.{% endif %}" />
-<meta name="twitter:image" content="{{ site.url }}/img/lc-logo.svg" />
-<meta name="twitter:image:alt" content="LC Education Consulting logo" />
+<meta name="twitter:image" content="{{ site.url }}/img/og-image.png" />
+<meta name="twitter:image:alt" content="LC Education Consulting" />
 
 <!-- JSON-LD: Business schema -->
 <script type="application/ld+json">
@@ -61,11 +64,27 @@
 
 <link rel="manifest" href="{{ '/manifest.webmanifest' | url }}" />
 <link rel="icon" type="image/svg+xml" href="{{ '/img/favicon.svg' | url }}" />
-<link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/lc-logo.svg' | url }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/icon-192.png' | url }}" />
 <meta name="theme-color" content="#556b2f" />
 <link rel="preload" href="{{ '/fonts/lato-400.woff2' | url }}" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="{{ '/fonts/lato-700.woff2' | url }}" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="{{ '/css/main.css' | url }}" as="style" />
+<style>
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('{{ "/fonts/lato-400.woff2" | url }}') format('woff2');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('{{ "/fonts/lato-700.woff2" | url }}') format('woff2');
+  }
+</style>
 <link rel="stylesheet" href="{{ '/css/main.css' | url }}" />
 <!-- Umami Analytics — replace YOUR_WEBSITE_ID with your site's ID from the Umami dashboard -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_WEBSITE_ID"></script>
