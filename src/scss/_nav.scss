@@ -52,20 +52,18 @@
   }
 }
 
-// ...existing code...
 .logo {
-  @include calc-add(width, 100%, -#{$space-24px});
   color: $color-text;
   display: inline-block;
-  margin: $space-16px 0 $space-16px $space-24px;
-  padding: 0;
+  margin: $space-24px;
+  padding: 0 0 0 $space-24px;
   text-align: center;
   white-space: normal;
+  width: 80%;
+  margin-left: 10%;
   &:focus span {
     color: $color-primary-dark;
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
-    border-radius: $focus-outline-radius;
+    @include focus-outline($color-primary, $radius: true);
   }
   &:focus-visible {
     outline: none;
@@ -82,7 +80,7 @@
 }
 
 .logo__text {
-  font-size: $font-size-xl;
+  font-size: $font-size-3xl;
   font-weight: 700;
   letter-spacing: $letter-spacing-wider;
   line-height: $line-height-tight;
@@ -103,9 +101,7 @@
 
     &:focus {
       color: $color-primary-dark;
-      outline: $focus-outline-stroke $color-primary;
-      outline-offset: $focus-outline-offset;
-      border-radius: $focus-outline-radius;
+      @include focus-outline($color-primary, $radius: true);
     }
   }
 
@@ -139,10 +135,10 @@
   width: auto;
   @media (min-width: #{$bp-tablet + 1px}) {
     justify-content: center;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
     margin-top: 0;
     min-height: $nav-height;
-    padding: 0 !important;
+    padding: 0;
     width: 100%;
   }
 }
@@ -187,8 +183,7 @@
 
   &:focus {
     color: $color-primary;
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
+    @include focus-outline($color-primary);
   }
 
   &.nav__link--active,
@@ -221,8 +216,7 @@
 
   &:focus {
     color: $color-primary;
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
+    @include focus-outline($color-primary);
   }
 
   svg {
@@ -244,7 +238,7 @@
   left: 50%;
   min-width: 220px;
   position: absolute;
-  @include calc-add(top, 100%, 4px);
+  top: calc(100% + 4px);
   transform: translateX(-50%);
   z-index: $nav-dropdown-z;
 
@@ -283,8 +277,7 @@
 
   &:focus {
     color: $color-primary;
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
+    @include focus-outline($color-primary);
   }
 
   span {
@@ -311,9 +304,7 @@
   transform: translateY(-50%);
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
-    border-radius: $focus-outline-radius;
+    @include focus-outline($color-primary, $radius: true);
   }
 
   svg {
@@ -371,9 +362,7 @@
   }
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary-dark;
-    outline-offset: $focus-outline-offset;
-    border-radius: $focus-outline-radius;
+    @include focus-outline($color-primary-dark, $radius: true);
   }
 }
 
@@ -400,9 +389,8 @@
   }
 
   &:focus {
-    color: $color-primary ;
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
+    color: $color-primary;
+    @include focus-outline($color-primary);
   }
 
   &[aria-current="page"] {

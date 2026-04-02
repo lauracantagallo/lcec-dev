@@ -21,10 +21,11 @@ layout: base.njk
 <section class="section section--blue">
   <div class="container">
     <div class="page-intro">
-      <h2 class="section-heading text-titlecase">{{ announcement.heading }}</h2>
-      <p class="section-subheading">{{ announcement.subheading | safe }}</p>
+      <h2 class="page-intro__heading text-titlecase">{{ announcement.heading }}</h2>
+      <p>{{ announcement.subheading | safe }}</p>
       <p>{{ announcement.body }}</p>
       <a href="{{ announcement.link_url }}" class="btn btn--ghost" target="_blank" rel="noopener">{{ announcement.link_text }}</a>
+    </div>
   </div>
 </section>
 

@@ -78,18 +78,10 @@ address a {
 .text-primary { color: $color-primary; }
 .text-on-dark { color: $color-text-on-dark; }
 
-// Text transform utilities
-// Use .text-titlecase to apply title casing to headings or text where needed.
-.text-titlecase {
-  text-transform: none;
-  /* Title case is not automatic in CSS, so use this class for headings written in title case in markup. */
-}
-
-
 // Section headings
 .section-heading {
   color: $color-primary;
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
   font-weight: 700;
   line-height: $line-height-snug;
   margin: $space-16px 0;
@@ -100,10 +92,12 @@ address a {
   .section--blue & {
     color: $color-white;
   }
+  :first-child & {
+    margin-top: 0;
+  }
 
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-3xl;
-    margin: $space-32px 0;
   }
 }
 
@@ -121,16 +115,13 @@ address a {
 // Uppercase, letter-spaced heading used across section patterns.
 // Use .section-heading for title-case, non-uppercase variant.
 .heading--section {
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
   font-weight: 700;
   letter-spacing: $letter-spacing-body;
   line-height: $line-height-snug;
   margin: $space-16px 0;
   text-align: center;
   text-transform: uppercase;
-  &:first-child {
-    margin-top: 0;
-  }
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-page-title;
     font-weight: 400;
@@ -191,12 +182,13 @@ address a {
 .section-lead {
   font-size: $font-size-base;
   line-height: $line-height-loose;
-  margin-bottom: $space-32px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 720px;
+  margin: 0 auto 1.5em;
+  max-width: $max-width-720px;
 
   @media (min-width: #{$bp-tablet + 1px}) {
     font-size: $font-size-xl;
   }
 }
+.text-xl        { font-size: $font-size-xl; }
+.text-uppercase { text-transform: uppercase; }
+.text-titlecase { text-transform: capitalize; }

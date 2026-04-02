@@ -4,7 +4,7 @@ layout: base.njk
 <section class="section section--blue">
   <div class="container">
     <div class="page-intro">
-      <h1 class="page-intro__heading">{{ page_title.heading }}</h1>
+      <h1 class="page-intro__heading text-uppercase">{{ page_title.heading }}</h1>
       <p>{{ intro_body }}</p>
       <a href="{{ '/contact/' | url }}" class="btn btn--ghost">Contact Us</a>
     </div>
@@ -13,7 +13,7 @@ layout: base.njk
 
 <section class="section section--white section--flush-bottom">
   <div class="container">
-    <h2 class="content-blocks__heading">{{ projects_heading }}</h2>
+    <h2 class="content-blocks__heading text-uppercase">{{ projects_heading }}</h2>
     <div class="content-blocks__grid">
       {% for project in projects %}
       <article class="content-blocks__block">

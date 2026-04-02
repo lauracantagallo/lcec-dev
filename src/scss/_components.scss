@@ -21,7 +21,7 @@
   width: 100%;
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary;
+    @include focus-outline($color-primary);
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
@@ -42,8 +42,7 @@
   }
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary-dark;
-    outline-offset: $focus-outline-offset;
+    @include focus-outline($color-primary-dark);
   }
 }
 
@@ -52,7 +51,8 @@
   border-color: $color-white;
   color: $color-white;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $color-white;
     border-color: $color-white;
     color: $color-text;
@@ -120,7 +120,7 @@
   p {
     font-size: $font-size-sm;
     letter-spacing: $letter-spacing-body;
-    max-width: 36rem;
+    max-width: $max-width-600px;
     text-align: center;
     text-transform: uppercase;
     white-space: pre-line;
@@ -171,9 +171,12 @@
 
 .testimonial {
   margin: 0 auto;
-  max-width: 800px;
-  padding: $space-32px $space-24px;
+  max-width: $max-width-720px;
+  padding: $space-24px $space-16px;
   text-align: center;
+  @media (min-width: #{$bp-tablet + 1px}) {
+    padding: $space-32px $space-24px;
+  }
 }
 
 .testimonial--dark {
@@ -230,6 +233,8 @@
 
 .testimonial--light {
   background-color: $color-white;
+  margin: 0;
+  padding: 0;
 
   .testimonial {
     background-color: $color-primary-light;
@@ -289,7 +294,7 @@
 
   &__heading {
     color: $color-text-on-dark;
-    font-size: $font-size-base;
+    font-size: $font-size-lg;
     font-weight: 700;
     margin-bottom: $space-8px;
 
@@ -317,9 +322,7 @@
 
 .social-links {
   display: flex;
-  gap: $space-16px;
   justify-content: center;
-  margin-top: $space-16px;
 }
 
 .social-link {
@@ -341,8 +344,6 @@
 
   &:focus {
     color: $color-linkedin-dark;
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
-    border-radius: $focus-outline-radius;
+    @include focus-outline($color-primary, $radius: true);
   }
 }

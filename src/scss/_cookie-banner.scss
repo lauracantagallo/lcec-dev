@@ -54,8 +54,7 @@
     }
 
     &:focus {
-      outline: $focus-outline-stroke $color-white;
-      outline-offset: $focus-outline-offset;
+      @include focus-outline($color-white);
     }
   }
   @media (min-width: #{$bp-tablet + 1px}) {

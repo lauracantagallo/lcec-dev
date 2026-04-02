@@ -25,11 +25,13 @@
 // ─── Sections ─────────────────────────────────────────────────────────────────
 
 .section {
-
+  &:first-child + .section {
+    padding-top: 0;
+  }
   padding: $space-16px 0;
 
   @media (min-width: #{$bp-tablet + 1px}) {
-    padding: $space-32px 0;
+    padding: $space-24px 0;
   }
 }
 

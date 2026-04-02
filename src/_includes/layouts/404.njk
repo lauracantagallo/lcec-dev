@@ -3,7 +3,7 @@ layout: base.njk
 ---
 <section class="page-title">
   <div class="container">
-    <h1 class="page-title__heading">{{ page_title.heading }}</h1>
+    <h1 class="page-title__heading text-uppercase">{{ page_title.heading }}</h1>
   </div>
 </section>
 
@@ -13,5 +13,3 @@ layout: base.njk
     <a href="{{ '/' | url }}" class="btn btn--outline">{{ button_text }}</a>
   </div>
 </section>
-
-{% include "partials/cta.njk" %}

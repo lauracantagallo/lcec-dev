@@ -7,28 +7,28 @@
   background-color: $color-primary;
   color: $color-text-on-dark;
   margin-top: auto;
-  padding: $space-32px 0 $space-24px;
-}
-
-.section--white:last-child {
-  margin-bottom: 2rem;
-}
-
-.section--blue:last-child {
-  margin-bottom: 0;
+  padding: $space-16px 0;
+  @media (min-width: #{$bp-tablet + 1px}) {
+    padding: $space-32px 0 $space-24px;
+  }
 }
 
 .footer-inner {
   @include flexbox(column, center);
-  gap: $space-24px;
+  gap: $space-16px;
   text-align: center;
-  gap: $space-24px;
-  text-align: center;
+
+  @media (min-width: #{$bp-tablet + 1px}) {
+    gap: $space-24px;
+  }
+
   & p {
     margin: 0;
   }
+
   .divider {
     border-top-color: $color-primary-light;
+    margin: 0;
     opacity: 0.35;
     width: 100%;
   }
@@ -67,8 +67,7 @@
 
     &:focus {
       color: $color-white;
-      outline: $focus-outline-stroke $color-white;
-      outline-offset: $focus-outline-offset;
+      @include focus-outline($color-white);
     }
 
     @media (min-width: #{$bp-tablet + 1px}) {
@@ -82,10 +81,11 @@
   font-size: $font-size-sm;
   font-weight: 700;
   letter-spacing: $letter-spacing-body;
-  @include text-transform(uppercase);
+  text-transform: uppercase;
 }
 
-.footer-brand, .footer-phone {
+.footer-brand,
+.footer-phone {
   text-align: center;
 
   a {
@@ -101,8 +101,7 @@
 
     &:focus {
       color: $color-white;
-      outline: $focus-outline-stroke $color-white;
-      outline-offset: $focus-outline-offset;
+      @include focus-outline($color-white);
     }
   }
 }
@@ -111,6 +110,5 @@
   color: $color-text-on-dark;
   font-size: $font-size-sm;
   text-align: center;
-  text-transform: uppercase;
   width: 100%;
 }

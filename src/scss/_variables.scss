@@ -49,8 +49,10 @@ $space-48px:   48px;
 $space-56px:   56px;
 
 // ─── Layout ───────────────────────────────────────────────────────────────────
-$container-md:   984px;
-$container-lg:  1140px;
+$container-md:     984px;
+$container-lg:    1140px;
+$max-width-720px:  720px;
+$max-width-600px:  600px;
 
 // ─── Breakpoints ──────────────────────────────────────────────────────────────
 $bp-tablet:  1023px;
@@ -74,3 +76,12 @@ $transition-quick:  0.2s ease;
 $shadow-card:       0 2px 6px 0 rgba(0, 0, 0, 0.2);
 $shadow-sheet:      0 0 6px 0 rgba(0, 0, 0, 0.6);
 $shadow-dropdown:   0 3px 6px 3px rgba(0, 0, 0, 0.16);
+
+// ─── Mixins ───────────────────────────────────────────────────────────────────
+@mixin focus-outline($color, $radius: false) {
+  outline: $focus-outline-stroke $color;
+  outline-offset: $focus-outline-offset;
+  @if $radius {
+    border-radius: $focus-outline-radius;
+  }
+}

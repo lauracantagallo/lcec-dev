@@ -45,7 +45,6 @@
     letter-spacing: $letter-spacing-body;
     line-height: $line-height-snug;
     margin-bottom: $space-16px;
-    text-transform: uppercase;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-page-title;
@@ -78,7 +77,7 @@
   }
 }
 
-// ─── Philosophy Section ───────────────────────────────────────────────────────
+// ─── Content blocks (reusable card grid) ─────────────────────────────────────
 
 .content-blocks {
   &__heading {
@@ -89,7 +88,6 @@
     line-height: $line-height-snug;
     margin: $space-16px 0;
     text-align: center;
-    text-transform: uppercase;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-page-title;
@@ -102,6 +100,11 @@
     display: grid;
     gap: $space-24px;
     grid-template-columns: 1fr;
+    padding-bottom: $space-32px;
+    &:last-child,
+    .section--flush-bottom & {
+      padding-bottom: 0;
+    }
 
     @media (min-width: #{$bp-tablet + 1px}) {
       gap: $space-32px;
@@ -224,7 +227,7 @@
 
   &__body {
     color: $color-text-medium;
-    font-size: $font-size-sm;
+    font-size: $font-size-base;
     line-height: $line-height-loose;
 
     @media (min-width: #{$bp-tablet + 1px}) {
@@ -282,7 +285,10 @@
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: $space-32px;
+  gap: $space-16px;
+  @media (min-width: #{$bp-tablet + 1px}) {
+    gap: $space-32px;
+  }
 
   .section-heading {
     font-weight: 400;
@@ -327,7 +333,6 @@
     letter-spacing: $letter-spacing-body;
     line-height: $line-height-snug;
     margin-bottom: $space-16px;
-    text-transform: uppercase;
 
     .section--blue & {
       font-weight: 700;
