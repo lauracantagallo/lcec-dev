@@ -433,13 +433,10 @@ function initUI() {
   initCookieBanner();
   initContactForm();
   initExternalLinks();
+  initAnnouncementToggle();
+  initFooterNavToggle();
+  initExitModal();
 }
 
 document.addEventListener('DOMContentLoaded', initUI);
 
-// ─── Performance Suggestions (not implemented, for future consideration) ────
-// 1. Defer non-critical JS: Add 'defer' to script tag in HTML for faster page load.
-// 2. Minify JS for production (already handled if using a bundler/minifier).
-// 3. Use passive event listeners for scroll/touch events if added in future.
-// 4. Consider code splitting if JS grows larger.
-// 5. Use IntersectionObserver for lazy-loading images or content if needed.
