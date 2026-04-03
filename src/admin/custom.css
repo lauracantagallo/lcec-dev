@@ -33,10 +33,18 @@ button[class*="isPrimary"]:hover,
 /* ── Links and active states ─────────────────────────────────────────────── */
 a,
 [class*="NavLink"][class*="isActive"],
-[class*="NavLink"]:hover,
-[class*="CollectionLink"][class*="isActive"],
-[class*="CollectionLink"]:hover {
+[class*="CollectionLink"][class*="isActive"] {
   color: var(--lcec-green) !important;
+}
+
+[class*="NavLink"]:hover,
+[class*="CollectionLink"]:hover,
+[class*="sidebar"] a:hover,
+[class*="Sidebar"] a:hover,
+[class*="sidebar"] button:hover,
+[class*="Sidebar"] button:hover {
+  background-color: #c8dfa0 !important;
+  color: var(--lcec-green-dark) !important;
 }
 
 /* ── Sidebar / nav background ────────────────────────────────────────────── */
@@ -73,6 +81,25 @@ a,
 /* ── Focus indicators — WCAG 2.2 AA ─────────────────────────────────────── */
 *:focus-visible {
   outline: var(--lcec-focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Sidebar nav links — inset box-shadow renders inside the element so it
+   can't be clipped by parent overflow or covered by the active left border */
+[class*="NavLink"]:focus-visible,
+[class*="CollectionLink"]:focus-visible,
+[class*="sidebar"] a:focus-visible,
+[class*="Sidebar"] a:focus-visible,
+[class*="sidebar"] button:focus-visible,
+[class*="Sidebar"] button:focus-visible {
+  outline: none !important;
+  box-shadow: inset 0 0 0 2px var(--lcec-green-dark) !important;
+  border-radius: 2px;
+}
+
+/* Header buttons — use white ring so it's visible on the olive background */
+[class*="AppHeader"] *:focus-visible {
+  outline: 2px solid #ffffff !important;
   outline-offset: 2px !important;
 }
 
