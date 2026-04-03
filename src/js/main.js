@@ -353,13 +353,15 @@ function initExitModal() {
 
     modal.classList.add('is-visible');
     document.body.classList.add('modal-open');
-    cancelBtn.focus();
+    document.querySelector('.page-wrap').setAttribute('inert', '');
+    modal.focus();
   }
 
   function closeModal() {
     if (timer) { clearInterval(timer); timer = null; }
     modal.classList.remove('is-visible');
     document.body.classList.remove('modal-open');
+    document.querySelector('.page-wrap').removeAttribute('inert');
     if (triggerEl) { triggerEl.focus(); triggerEl = null; }
   }
 
