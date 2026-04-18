@@ -39,7 +39,7 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          PATH_PREFIX: /
+          PATH_PREFIX: /lcec-a11y-rebuild/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
