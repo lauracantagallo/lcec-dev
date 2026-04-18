@@ -9,6 +9,7 @@
 - [ ] Add dynamic VCF contact card download?
 - [ ] Configure GA4 — get tracking ID from Google Analytics, set `"gaId": "G-XXXXXXXXXX"` in `src/_data/site.json`
 - [ ] Configure Web3Forms — get free access key at web3forms.com (use Laura's email), set `"web3formsKey"` in `src/_data/site.json`
+- [ ] Review `contact-success` page — visual check that it renders cleanly and has a clear next step for the user
 
 ## DRY Opportunities
 
@@ -30,6 +31,8 @@
 ## Resolved
 
 - [x] Replace Netlify Forms with Web3Forms — `contact.njk` updated; access key stored in `site.web3formsKey`
+- [x] Web3Forms reply-to — email field renamed to `name="replyto"`; `from_name` set to "LC Education Consulting"
+- [x] Pre-launch checklist documented — set `PATH_PREFIX: /` in workflow, replace GA4 + Web3Forms key placeholders, verify `robots.txt` sitemap URL matches domain
 
 - [x] Cleanup services subpages designs
 - [x] Make mobile icon more prominent

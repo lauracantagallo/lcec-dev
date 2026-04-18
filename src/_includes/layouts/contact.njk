@@ -48,6 +48,7 @@ layout: base.njk
       <input type="hidden" name="access_key" value="{{ site.web3formsKey }}" />
       <input type="hidden" name="subject" value="New contact form submission — LC Education Consulting" />
       <input type="hidden" name="redirect" value="{{ site.url }}/contact-success/" />
+      <input type="hidden" name="from_name" value="LC Education Consulting" />
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true" />
       <h2 class="section-heading">{{ form.heading }}</h2>
 
@@ -67,7 +68,7 @@ layout: base.njk
 
       <div class="form-field">
         <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
-        <input class="form-input" type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error" />
+        <input class="form-input" type="email" id="email" name="replyto" required autocomplete="email" aria-describedby="email-error" />
         <p class="form-error" id="email-error"></p>
       </div>
 
