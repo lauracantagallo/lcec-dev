@@ -31,6 +31,7 @@
 ## Resolved
 
 - [x] Replace Netlify Forms with Web3Forms — `contact.njk` updated; access key stored in `site.web3formsKey`
+- [x] Add axe-core a11y linting — `npm run lint:a11y` scans all built HTML in `dist/` using axe-core + jsdom
 - [x] Web3Forms reply-to — email field renamed to `name="replyto"`; `from_name` set to "LC Education Consulting"
 - [x] Pre-launch checklist documented — set `PATH_PREFIX: /` in workflow, replace GA4 + Web3Forms key placeholders, verify `robots.txt` sitemap URL matches domain
 
