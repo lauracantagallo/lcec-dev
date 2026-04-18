@@ -3,7 +3,7 @@
 ## Open
 
 - [ ] Style 404 page
-- [ ] Wire up contact form — Netlify Forms is in place; needs end-to-end testing and confirmation email
+- [ ] Wire up contact form — Web3Forms is wired up; get access key at web3forms.com and set `"web3formsKey"` in `src/_data/site.json`, then test end-to-end
 - [ ] Add Decap CMS (?)
 - [ ] Screen reader testing
 - [ ] Add dynamic VCF contact card download?
@@ -27,6 +27,8 @@
 ---
 
 ## Resolved
+
+- [x] Replace Netlify Forms with Web3Forms — `contact.njk` updated; access key stored in `site.web3formsKey`
 
 - [x] Cleanup services subpages designs
 - [x] Make mobile icon more prominent

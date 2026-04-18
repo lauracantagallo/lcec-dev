@@ -44,14 +44,14 @@ layout: base.njk
   <div class="container">
     <h2 class="heading--section">{{ contact_section.heading }}</h2>
     <div role="status" aria-live="polite" aria-atomic="true"></div>
-    <form class="contact-form" name="contact" action="/contact-success/" method="post" netlify data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" novalidate>
-      <input type="hidden" name="form-name" value="contact" />
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="post" novalidate>
+      <input type="hidden" name="access_key" value="{{ site.web3formsKey }}" />
+      <input type="hidden" name="subject" value="New contact form submission — LC Education Consulting" />
+      <input type="hidden" name="redirect" value="{{ site.url }}/contact-success/" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true" />
       <h2 class="section-heading">{{ form.heading }}</h2>
 
       <p class="form-required-note">All fields marked with * are required.</p>
-
-      {# Honeypot — hidden from real users, used by Netlify spam filtering #}
-      <input type="text" name="bot-field" autocomplete="off" tabindex="-1" value="" />
 
       <div class="form-field">
         <label class="form-label" for="org-name">Organization Name <span aria-hidden="true">*</span></label>
@@ -112,11 +112,7 @@ layout: base.njk
         <p class="form-error" id="contact-method-error"></p>
       </div>
   
-      <div data-netlify-recaptcha="true"></div>
-
       <button type="submit" class="btn btn--outline">Send</button>
-
-      <p class="form-privacy">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.</p>
 
       <p class="form-privacy">{{ form.privacy_text }}</p>
     </form>
