@@ -87,6 +87,18 @@ Suggested copy updates flagged during a content fact-check (April 2026). Each it
 
 ---
 
+### 8. Footer phone number may be incorrect
+
+**File:** `src/_includes/partials/footer.njk`
+**Current:** `302-750-7443` (Delaware area code)
+**Office data (`office.json`):** `856-310-4483` (South NJ, Collingswood)
+
+**Suggested:** Confirm which number is correct and update footer to match, or update `office.json` if the 302 number is intentional.
+
+**Why:** Header and contact page both show 856-310-4483. Footer shows a different number. One of them is wrong.
+
+---
+
 ## Resolved
 
 ### ~~98% WebAIM stat was outdated~~ ✓ Fixed 2026-04-17

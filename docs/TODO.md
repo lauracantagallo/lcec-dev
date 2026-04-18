@@ -19,6 +19,13 @@
 - [ ] Add dynamic VCF contact card download?
 - [ ] Add Decap CMS (?)
 
+## Code Quality
+
+- [x] Fix `storageGet`/`storageSet` infinite recursion — both functions called themselves instead of `localStorage`; cookie consent, announcement, and footer nav state never persisted
+- [x] Fix unclosed `<a>` tag in `footer.njk` footer brand link
+- [x] Dereference hardcoded phone in `header.njk` — now uses `{{ office.phone_href }}` / `{{ office.phone }}`
+- [x] Extract `makeCollapseToggle` factory in `main.js` — shared by `initAnnouncementToggle` and `initFooterNavToggle`
+
 ## DRY Opportunities
 
 - [x] **Calendar URL** repeated 4× — centralized in `site.json` as `calendar_url`; templates use `{{ cta.button_url or site.calendar_url }}`
