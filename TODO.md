@@ -10,6 +10,8 @@
 - [ ] Configure GA4 — get tracking ID from Google Analytics, set `"gaId": "G-XXXXXXXXXX"` in `src/_data/site.json`
 - [ ] Configure Web3Forms — get free access key at web3forms.com (use Laura's email), set `"web3formsKey"` in `src/_data/site.json`
 - [ ] Review `contact-success` page — visual check that it renders cleanly and has a clear next step for the user
+- [ ] GA4 consent gating — GA4 currently fires before cookie consent is checked; implement GA4 Consent Mode or delay script load until accept is clicked (GDPR concern, address before launch)
+- [ ] Web3Forms `from_name` — hardcoded to "LC Education Consulting"; use a small JS snippet to sync the `your_name` field into the hidden `from_name` input before submit so Laura's inbox shows the submitter's name
 
 ## DRY Opportunities
 
