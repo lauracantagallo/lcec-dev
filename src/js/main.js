@@ -4,10 +4,10 @@ import { toggleClass, setAria, onEscape } from './utils/dom.js';
 import { formatPhoneNumber } from './utils/form.js';
 
 function storageGet(key) {
-  try { return storageGet(key); } catch { return null; }
+  try { return localStorage.getItem(key); } catch { return null; }
 }
 function storageSet(key, value) {
-  try { storageSet(key, value); } catch { /* unavailable */ }
+  try { localStorage.setItem(key, value); } catch { /* unavailable */ }
 }
 
 // ─── Navigation (Mobile & Dropdown) ─────────────────────────────────────────-
@@ -259,6 +259,19 @@ function initExternalLinks() {
   });
 }
 
+// ─── Collapse toggle factory ─────────────────────────────────────────────────
+function makeCollapseToggle({ storageKey, container, btn, extraToggle, expandLabel, collapseLabel }) {
+  function setCollapsed(collapsed) {
+    container.classList.toggle('is-collapsed', collapsed);
+    if (extraToggle) extraToggle.classList.toggle('is-collapsed', collapsed);
+    btn.setAttribute('aria-expanded', String(!collapsed));
+    btn.setAttribute('aria-label', collapsed ? expandLabel : collapseLabel);
+    storageSet(storageKey, collapsed ? '1' : '0');
+  }
+  if (storageGet(storageKey) === '1') setCollapsed(true);
+  btn.addEventListener('click', () => setCollapsed(!container.classList.contains('is-collapsed')));
+}
+
 // ─── Announcement bar toggle ─────────────────────────────────────────────────
 const ANNOUNCE_COLLAPSED_KEY = 'lc_announce_collapsed';
 
@@ -267,18 +280,13 @@ function initAnnouncementToggle() {
   const btn     = bar && bar.querySelector('.announcement-bar__toggle');
   const content = document.getElementById('announcement-bar-content');
   if (!bar || !btn || !content) return;
-
-  function setCollapsed(collapsed) {
-    bar.classList.toggle('is-collapsed', collapsed);
-    btn.setAttribute('aria-expanded', String(!collapsed));
-    btn.setAttribute('aria-label', collapsed ? 'Expand announcement' : 'Collapse announcement');
-    storageSet(ANNOUNCE_COLLAPSED_KEY, collapsed ? '1' : '0');
-  }
-
-  // Restore persisted state before first paint
-  if (storageGet(ANNOUNCE_COLLAPSED_KEY) === '1') setCollapsed(true);
-
-  btn.addEventListener('click', () => setCollapsed(!bar.classList.contains('is-collapsed')));
+  makeCollapseToggle({
+    storageKey: ANNOUNCE_COLLAPSED_KEY,
+    container: bar,
+    btn,
+    expandLabel: 'Expand announcement',
+    collapseLabel: 'Collapse announcement'
+  });
 }
 
 // ─── Footer nav toggle ───────────────────────────────────────────────────────
@@ -288,19 +296,14 @@ function initFooterNavToggle() {
   const wrapper = document.getElementById('footer-nav-content');
   const btn     = document.querySelector('.footer-nav-toggle');
   if (!wrapper || !btn) return;
-
-  function setCollapsed(collapsed) {
-    wrapper.classList.toggle('is-collapsed', collapsed);
-    btn.classList.toggle('is-collapsed', collapsed);
-    btn.setAttribute('aria-expanded', String(!collapsed));
-    btn.setAttribute('aria-label', collapsed ? 'Expand footer navigation' : 'Collapse footer navigation');
-    storageSet(FOOTER_NAV_COLLAPSED_KEY, collapsed ? '1' : '0');
-  }
-
-  // Restore persisted state before first paint
-  if (storageGet(FOOTER_NAV_COLLAPSED_KEY) === '1') setCollapsed(true);
-
-  btn.addEventListener('click', () => setCollapsed(!wrapper.classList.contains('is-collapsed')));
+  makeCollapseToggle({
+    storageKey: FOOTER_NAV_COLLAPSED_KEY,
+    container: wrapper,
+    btn,
+    extraToggle: btn,
+    expandLabel: 'Expand footer navigation',
+    collapseLabel: 'Collapse footer navigation'
+  });
 }
 
 // ─── Exit Modal ──────────────────────────────────────────────────────────────
