@@ -11,17 +11,17 @@ hero:
   cta_secondary_text: "See Our Services"
   cta_secondary_url: "/accessibility-services/"
 announcement:
-  heading: "ADA Title II Deadlines"
-  subheading: "April 2026 (large entities) &nbsp;|&nbsp; April 2027 (smaller entities)"
-  body: "Is your website and digital content ready?"
+  heading: "ADA Title II Deadlines Updated"
+  subheading: "April 2027 (large entities) &nbsp;|&nbsp; April 2028 (smaller entities)"
+  body: "The DOJ extended deadlines by one year. Is your website and digital content ready?"
   link_text: "ADA Title II Web and Mobile App Accessibility Rule"
   link_url: "https://www.ada.gov/resources/web-rule-first-steps/"
 stats_heading: "Most Organizations Don't Know They Have Accessibility Gaps."
 stats:
   - value: "98%"
     label: "of websites have detectable WCAG accessibility failures (WebAIM)"
-  - value: "April 2026"
-    label: "ADA Title II compliance deadline for large public entities"
+  - value: "April 2027"
+    label: "ADA Title II compliance deadline for large public entities (50,000+ population)"
   - value: "30–40%"
     label: "of accessibility issues are caught by automated tools. Manual testing finds the rest."
 quote:
