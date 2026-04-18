@@ -147,6 +147,7 @@ Key tokens:
 npm run lint        # run both JS and CSS linters
 npm run lint:js     # ESLint (flat config v9) — src/js/ and build/
 npm run lint:css    # Stylelint — src/scss/**/*.scss
+npm run lint:a11y   # axe-core scan — runs against built HTML in dist/ (run npm run build first)
 ```
 
 Pre-commit hooks (Husky + lint-staged) run automatically on staged files before each commit.
