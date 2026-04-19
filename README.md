@@ -4,6 +4,8 @@
 
 Source repository for the LC Education Consulting website, built with Eleventy, Sass, and esbuild.
 
+**Developer:** Mikey Ilagan
+
 ## Tech Stack
 
 | Layer | Tool |
@@ -67,9 +69,12 @@ lcec/
 │   │       └── form.js            # formatPhoneNumber helper
 │   ├── img/                       # Source images (JPG + generated WebP)
 │   ├── static/
-│   │   ├── _headers               # HTTP headers config (Netlify / Cloudflare Pages only)
 │   │   ├── robots.txt
 │   │   └── fonts/                 # Self-hosted Lato woff2 files
+│   ├── admin/
+│   │   ├── index.njk              # Decap CMS admin shell (dev branch only)
+│   │   ├── config.yml             # Decap CMS backend and collections config
+│   │   └── custom.css             # Decap CMS UI overrides
 │   └── content/
 │       ├── index.md               # Homepage content (frontmatter data)
 │       ├── our-story.md
@@ -79,8 +84,6 @@ lcec/
 │       ├── webinars-and-training.md
 │       ├── contact.md
 │       └── contact-success.md
-├── src/
-│   └── admin/                     # Decap CMS config (dev branch only)
 ├── build/
 │   ├── js.js                      # esbuild script (minifies on build, watches on dev)
 │   ├── images.js                  # Sharp script — converts src/img/ JPGs to WebP
@@ -93,15 +96,13 @@ lcec/
 ├── docs/
 │   ├── TODO.md                        # Prioritised task list
 │   ├── CONTENT_SUGGESTIONS.md         # Tracked copy and content improvement suggestions
-│   ├── setup-github.md                # Client guide — GitHub account and repo setup
-│   └── setup-netlify.md               # Client guide — Netlify account and staging setup
+│   └── setup-github.md                # GitHub repos, Pages config, OAuth app, and push workflow
 ├── dist/                          # Compiled output (not committed)
 ├── .eleventy.js                   # Eleventy config (filters, HTML minification, passthrough)
 ├── eslint.config.js               # ESLint flat config (v9) for src/js and build/
 ├── .stylelintrc.json              # Stylelint config extending stylelint-config-standard-scss
 ├── .husky/
 │   └── pre-commit                 # Runs lint-staged before every commit
-├── netlify.toml                   # Netlify build config (used by lc-dev staging repo)
 ├── manifest.webmanifest           # PWA manifest
 └── package.json
 ```
@@ -133,7 +134,7 @@ Runs three watchers in parallel:
 npm run dev:cms
 ```
 
-Adds a fourth watcher — the local Decap CMS proxy server. The CMS admin UI is available at `http://localhost:8080/admin/` while this command is running. Requires Netlify Identity to be configured on the `lc-dev` Netlify site for authentication.
+Adds a fourth watcher — the local Decap CMS proxy server. The CMS admin UI is available at `http://localhost:8080/admin/` while this command is running. No authentication required locally — `local_backend: true` in `src/admin/config.yml` bypasses OAuth.
 
 ## Production Build
 
@@ -177,30 +178,31 @@ Key tokens:
 
 ## Deployment
 
-This project uses two repositories for separate environments:
+This project uses two repositories on Laura's GitHub account (`lauracantagallo`), both hosted on GitHub Pages:
 
-| Repo | Branch | Host | URL |
-| ---- | ------ | ---- | --- |
-| `lc-prod` | `main` | GitHub Pages | Custom domain (production) |
-| `lc-dev` | `dev` | Netlify | Staging URL |
+| Repo | Branch | Host | URL | Purpose |
+| ---- | ------ | ---- | --- | ------- |
+| `lcec-prod` | `main` | GitHub Pages | Custom domain | Production |
+| `lcec-dev` | `main` | GitHub Pages | `lauracantagallo.github.io/lcec-dev` | Staging |
 
-**Production** deploys automatically on push to `main` via `.github/workflows/pages-main.yml`.
+Both repos deploy automatically on push to `main` via `.github/workflows/pages-main.yml`. The `PATH_PREFIX` is set per-repo as a GitHub Actions repository variable (`/lcec-prod/` and `/lcec-dev/` respectively).
 
-**Staging** deploys automatically on push to `dev` via Netlify's branch deploy.
+### Push Workflow
 
-Netlify features in use on staging (`lc-dev`):
+```bash
+git push lcec-dev dev:main    # push to staging
+git push lcec-prod main       # push to production (when ready)
+git push origin dev           # sync your personal backup
+```
 
-- **Headers** — Custom HTTP cache and security headers via `src/static/_headers` (GitHub Pages ignores this file)
+### Decap CMS Auth (staging only)
 
-## Branch Workflow
+Decap CMS is deployed on `lcec-dev` and uses GitHub OAuth via a Cloudflare Worker (`lcec-cms-auth`) for authentication. The Worker handles the OAuth handshake with GitHub and returns a token to the CMS. The GitHub OAuth App and Cloudflare Worker are registered under Laura's account.
 
-- All new work starts on `dev` (or a feature branch off `dev`)
-- `dev` deploys automatically to Netlify for staging review
-- When ready for production, merge `dev` → `main`
-- **On merge from main → dev:** `package.json` will conflict. Always keep the `dev` version to preserve `decap-server` and the `dev:cms`/`dev:decap` scripts.
+Decap is self-hosted (`node_modules/decap-cms/dist/decap-cms.js` copied to `dist/admin/` via Eleventy passthrough) to avoid browser tracking-prevention storage blocks.
 
 ## Notes
 
 - `site.url` in `src/_data/site.json` and `.eleventy.js` must be kept in sync
-- `PATH_PREFIX` in `.github/workflows/pages-main.yml` must match the deployment path — set to `/lcec-a11y-rebuild/` for the `mikeyil` test repo, change to `/` when deploying under a custom domain on `lc-prod`
+- `PATH_PREFIX` is set as a GitHub Actions repository variable — update it in each repo's Settings → Variables → Actions if the deployment path changes
 - A pull request template lives at `.github/pull_request_template.md` — includes accessibility and SEO checklist items

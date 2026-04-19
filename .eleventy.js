@@ -45,10 +45,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static": "/" });
   eleventyConfig.addPassthroughCopy({ "manifest.webmanifest": "manifest.webmanifest" });
 
-  eleventyConfig.addGlobalData("env", {
-    isNetlify: !!process.env.NETLIFY,
-  });
-
   eleventyConfig.addGlobalData("site", {
     name: "LC Education Consulting",
     url: "https://www.lceducationconsulting.com",
