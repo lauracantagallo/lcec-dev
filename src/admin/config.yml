@@ -27,6 +27,7 @@ collections:
         fields:
           - { label: Site Name, name: name, widget: string, hint: "Shown in browser tab titles and OG share cards." }
           - { label: Site URL, name: url, widget: string, hint: "Full URL with https://, no trailing slash. e.g. https://www.lceducationconsulting.com" }
+          - { label: Booking URL, name: calendar_url, widget: string, hint: "The scheduling link used for all CTA buttons sitewide. e.g. https://calendar.app.google/..." }
           - { label: Phone (E.164), name: phone, widget: string, hint: "Used in structured data only. Format: +1XXXXXXXXXX e.g. +18563104483" }
           - { label: Email, name: email, widget: string, hint: "Used in structured data and JSON-LD schema." }
           - { label: City, name: city, widget: string }
@@ -34,7 +35,6 @@ collections:
           - { label: Country, name: country, widget: string, hint: "Two-letter code, e.g. US" }
           - { label: Founding Year, name: foundingDate, widget: string, hint: "Four-digit year, e.g. 2014" }
           - { label: Founder Name, name: founder, widget: string }
-          - { label: Booking URL, name: calendar_url, widget: string, hint: "The default scheduling link used for all CTA buttons. e.g. https://calendar.app.google/..." }
           - { label: GA4 Tracking ID, name: gaId, widget: string, required: false, hint: "Google Analytics 4 tracking ID. Leave blank to disable analytics. e.g. G-XXXXXXXXXX" }
           - { label: LinkedIn URL, name: linkedinUrl, widget: string, required: false, hint: "Full URL to the LC Education Consulting LinkedIn page." }
           - { label: Google Business Profile URL, name: googleBusinessUrl, widget: string, required: false, hint: "Full URL to the Google Business Profile. Used in structured data." }
@@ -59,7 +59,7 @@ collections:
         file: src/_data/announcement.json
         hint: "The slim banner at the very top of every page. Keep it short — one or two sentences. Supports basic HTML like <br> and <strong>."
         fields:
-          - { label: Announcement Text, name: announcement, widget: text, hint: "Appears in the top announcement bar on every page. HTML is allowed — use <br> for line breaks, <strong> for bold." }
+          - { label: Announcement Text, name: announcement, widget: text, hint: "Appears in the top announcement bar on every page. Leave blank to hide the bar. HTML is allowed — use <br> for line breaks, <strong> for bold." }
 
       - name: cta
         label: Global CTA Block
@@ -144,7 +144,7 @@ collections:
             fields:
               - { label: Heading, name: heading, widget: string }
               - { label: Subheading, name: subheading, widget: string }
-              - { label: Body, name: body, widget: string }
+              - { label: Body, name: body, widget: text, hint: "Supporting sentence below the subheading." }
               - { label: Link Text, name: link_text, widget: string, hint: "Text for the 'learn more' button." }
               - { label: Link URL, name: link_url, widget: string, hint: "Full URL for the link button." }
           - { label: Stats Heading, name: stats_heading, widget: string, hint: "Heading above the three statistics." }
@@ -179,7 +179,7 @@ collections:
               - label: Body Paragraphs
                 name: body
                 widget: list
-                hint: "Each item is one paragraph. Add more items to add more paragraphs."
+                hint: "Each item is one paragraph. Some paragraphs contain HTML links — preserve any <a href=\"...\">...</a> tags exactly as written when editing."
                 field: { label: Paragraph, name: item, widget: text }
           - label: Philosophy Section
             name: philosophy
@@ -213,7 +213,7 @@ collections:
           - label: Body Paragraphs
             name: body
             widget: list
-            hint: "The introductory paragraphs about Laura's background. Each item is one paragraph."
+            hint: "The introductory paragraphs about Laura's background. Each item is one paragraph. Some paragraphs contain HTML links — preserve any <a href=\"...\">...</a> tags exactly as written when editing."
             field: { label: Paragraph, name: item, widget: text }
           - { label: Credentials Heading, name: credentials_heading, widget: string, hint: "Heading above the bullet-point credentials list, e.g. 'Professional Background'" }
           - label: Credentials
@@ -227,7 +227,7 @@ collections:
             hint: "The client testimonial shown in the quote section at the bottom of the page."
             fields:
               - { label: Text, name: text, widget: text, hint: "Quote text — no quotation marks needed." }
-              - { label: Attribution, name: attribution, widget: string }
+              - { label: Attribution, name: attribution, widget: string, hint: "Client name and/or organization shown below the quote." }
 
       - name: accessibility-services
         label: Accessibility Services
