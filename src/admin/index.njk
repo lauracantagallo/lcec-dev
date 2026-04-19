@@ -15,15 +15,15 @@ eleventyExcludeFromCollections: true
     <script src="decap-cms.js"></script>
     <script>
       (function () {
-        var lastH1 = null;
+        var lastText = '';
         new MutationObserver(function () {
           var h1 = document.querySelector('#nc-root h1');
-          if (h1 && h1 !== lastH1) {
-            lastH1 = h1;
+          if (h1 && h1.textContent !== lastText) {
+            lastText = h1.textContent;
             h1.setAttribute('tabindex', '-1');
             h1.focus({ preventScroll: false });
           }
-        }).observe(document.body, { childList: true, subtree: true });
+        }).observe(document.body, { childList: true, subtree: true, characterData: true });
       })();
     </script>
   </body>
