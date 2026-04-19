@@ -39,7 +39,8 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          PATH_PREFIX: /lcec-dev/
+          PATH_PREFIX: ${{ vars.PATH_PREFIX }}
+          WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
