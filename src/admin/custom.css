@@ -71,13 +71,13 @@ header [role="button"]:hover {
 }
 
 /* Hide the SVG icon only on the active item, replace with a filled triangle */
-[class*="Sidebar"] [class*="NavLink"][class*="isActive"] svg,
-[class*="Sidebar"] [class*="CollectionLink"][class*="isActive"] svg {
+[class*="NavLink"][class*="isActive"] svg,
+[class*="CollectionLink"][class*="isActive"] svg {
   display: none !important;
 }
 
-[class*="Sidebar"] [class*="NavLink"][class*="isActive"]::before,
-[class*="Sidebar"] [class*="CollectionLink"][class*="isActive"]::before {
+[class*="NavLink"][class*="isActive"]::before,
+[class*="CollectionLink"][class*="isActive"]::before {
   content: "▶";
   font-size: 0.7em;
   margin-right: 0.4em;
@@ -98,6 +98,14 @@ header [role="button"]:hover {
 [class*="AppHeader"] svg,
 [class*="AppHeader"] svg * {
   fill: currentColor !important;
+}
+
+header button:hover svg,
+header button:hover svg *,
+header [role="button"]:hover svg,
+header [role="button"]:hover svg * {
+  fill: var(--lcec-green-dark) !important;
+  color: var(--lcec-green-dark) !important;
 }
 
 /* ── Logo in CMS header ──────────────────────────────────────────────────── */
@@ -202,15 +210,15 @@ input[type="radio"] {
 }
 
 /* ── List / grid view toggle buttons ────────────────────────────────────── */
-[class*="ViewControls"] button[class*="active"],
-[class*="ViewControl"][class*="active"],
-[class*="ListControl"][class*="active"],
-[class*="GridControl"][class*="active"],
-[role="toolbar"] button[aria-pressed="true"],
-[role="group"] button[aria-pressed="true"] {
+button[aria-pressed="true"] {
   background-color: var(--lcec-blue) !important;
   border: 1px solid var(--lcec-blue) !important;
   border-radius: 4px !important;
   color: #fff !important;
+}
+
+button[aria-pressed="true"] svg,
+button[aria-pressed="true"] svg * {
+  fill: #fff !important;
 }
 
