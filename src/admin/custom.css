@@ -70,13 +70,18 @@ header [role="button"]:hover {
   background-color: var(--lcec-green-light) !important;
 }
 
-/* Solid filled triangle on the active item only */
-[class*="Sidebar"] [class*="NavLink"][class*="isActive"]::after,
-[class*="Sidebar"] [class*="CollectionLink"][class*="isActive"]::after {
+/* Hide the SVG icon only on the active item, replace with a filled triangle */
+[class*="Sidebar"] [class*="NavLink"][class*="isActive"] svg,
+[class*="Sidebar"] [class*="CollectionLink"][class*="isActive"] svg {
+  display: none !important;
+}
+
+[class*="Sidebar"] [class*="NavLink"][class*="isActive"]::before,
+[class*="Sidebar"] [class*="CollectionLink"][class*="isActive"]::before {
   content: "▶";
-  font-size: 0.6em;
-  margin-left: auto;
-  padding-right: 0.5em;
+  font-size: 0.7em;
+  margin-right: 0.4em;
+  vertical-align: middle;
   color: var(--lcec-green-dark);
 }
 
