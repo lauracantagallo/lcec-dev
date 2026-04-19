@@ -20,6 +20,7 @@
 
 .footer-inner {
   @include flexbox(column, center);
+
   gap: $space-16px;
   text-align: center;
 
@@ -82,6 +83,7 @@
   & svg {
     transform: rotate(180deg);
   }
+
   &.is-collapsed svg {
     transform: rotate(0deg);
   }
@@ -95,12 +97,14 @@
 .footer-nav {
   &__list {
     @include flexbox(column);
+
     gap: $space-8px;
     margin: $space-8px 0 0;
     padding: 0;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       @include flexbox(row, stretch, center);
+
       flex-wrap: wrap;
       gap: $space-8px $space-16px;
       justify-content: center;
@@ -113,6 +117,7 @@
     font-size: $font-size-sm;
     padding: $space-8px $space-16px;
     text-decoration: none;
+
     @include transition(color, 0.2s, ease);
 
     .external-link-icon {
@@ -125,6 +130,7 @@
 
     &:focus {
       color: $color-white;
+
       @include focus-outline($color-white);
     }
 
@@ -161,6 +167,7 @@
 
     &:focus {
       color: $color-white;
+
       @include focus-outline($color-white);
     }
   }
