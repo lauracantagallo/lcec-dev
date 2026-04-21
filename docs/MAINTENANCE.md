@@ -35,8 +35,8 @@ Tasks to run periodically or before a PR. Most require judgment — automated ch
 ## Content
 
 - [ ] **Internal links** — any new copy that mentions a service, page, or topic should link to the relevant page
+- [ ] **Spelling, grammar, and fact-checking** — review any new or edited copy for typos, grammatical errors, and factual accuracy (stats, dates, credentials, service descriptions)
 - [ ] **Stat accuracy** — WebAIM Million figures, ADA Title II deadlines, and years of experience update periodically
-- [ ] **CONTENT_SUGGESTIONS review** — work through open items with Laura; close resolved ones
 
 ## SEO
 
@@ -48,6 +48,7 @@ Tasks to run periodically or before a PR. Most require judgment — automated ch
 - [ ] **CHANGELOG** — add an entry for any meaningful code change
 - [ ] **UPDATES.md** — add a plain-language entry for anything user-facing (for Laura)
 - [ ] **TODO.md** — close resolved items; add new findings under the correct category
+- [ ] **CONTENT_SUGGESTIONS.md** — add any new copy issues found; close items that have been resolved with Laura
 - [ ] **README accuracy** — check tech stack, project structure, and deployment sections reflect current state
 
 ## Dependencies

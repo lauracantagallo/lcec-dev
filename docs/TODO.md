@@ -25,6 +25,7 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 - [ ] **Laura's personal LinkedIn** `[seo]` — if she has one, add the URL to the `Person` schema `sameAs` in `head.njk` (or add a `founderLinkedinUrl` field to `site.json`)
 - [ ] **Business hours** `[seo]` — confirm with Laura, then add `openingHoursSpecification` to the `ProfessionalService` schema in `head.njk`
 - [ ] Review `contact-success` page `[content]` — visual check that it renders cleanly and has a clear next step for the user
+- [ ] **Review CONTENT_SUGGESTIONS with Laura** `[content]` — work through open copy items, confirm or dismiss each, and close resolved ones
 
 ---
 
