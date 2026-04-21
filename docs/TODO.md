@@ -11,20 +11,20 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 - [ ] **GA4 consent gating** `[security]` — GA4 fires before cookie consent is acknowledged; implement GA4 Consent Mode or delay `gtag` init until the accept button is clicked
 - [ ] **Custom domain on `lcec-prod`** `[seo]` — configure DNS (CNAME/A record pointing to `lauracantagallo.github.io`), then set the `PATH_PREFIX` repo variable to `/` in `lcec-prod` so asset paths resolve correctly
 - [ ] **Test contact form end-to-end** `[content]` — submit a real entry and confirm Laura receives the email with correct reply-to (requires Web3Forms key above)
+- [ ] **Style 404 page** `[content]`
+- [ ] **Screen reader testing** `[a11y]`
 
 ---
 
 ## Before Launch — Should Do
 
-- [ ] **Fix Accessibility Services page bottom spacing** `[content]` — excess or missing space below the page content; audit padding/margin on the last section and align with other pages
+- [ ] **Confirm phone numbers with Laura** `[content]` — footer uses `302-750-7443`; header/contact uses `856-310-4483`; both may be intentional but should be verified before launch (see `docs/CONTENT_SUGGESTIONS.md` item 1)
 - [ ] **Google Business Profile** `[seo]` — create a profile for LC Education Consulting, then paste the URL into `site.json` → `"googleBusinessUrl"`; it will automatically appear in the business schema `sameAs` array
 - [ ] **Google Search Console** `[seo]` — verify ownership by pasting the GSC verification code into `site.json` → `"gscVerificationId"`; then submit the sitemap
 - [ ] **`og:image`** `[seo]` — currently uses a generic `/img/og-image.png`; a real branded image (1200×630) would improve link previews on LinkedIn, Slack, and iMessage
 - [ ] **Laura's personal LinkedIn** `[seo]` — if she has one, add the URL to the `Person` schema `sameAs` in `head.njk` (or add a `founderLinkedinUrl` field to `site.json`)
 - [ ] **Business hours** `[seo]` — confirm with Laura, then add `openingHoursSpecification` to the `ProfessionalService` schema in `head.njk`
 - [ ] Review `contact-success` page `[content]` — visual check that it renders cleanly and has a clear next step for the user
-- [ ] Style 404 page `[content]`
-- [ ] Screen reader testing `[a11y]`
 
 ---
 
@@ -81,7 +81,7 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 ## DRY Opportunities
 
 - [x] **Calendar URL** repeated 4× — centralized in `site.json` as `calendar_url`; templates use `{{ cta.button_url or site.calendar_url }}`
-- [x] **`.heading--section` / `.detail-heading`** — shared `%heading-section-base` placeholder in `_typography.scss`; classes now only override the mobile `font-size`
+- [x] **`.heading--section` / `.detail-heading`** — placeholder and both classes removed entirely from `_typography.scss`; all templates migrated to `content-blocks__heading text-uppercase`
 - [x] **Phone/email in front matter** — never was; layouts already reference `office.*` from `_data/office.json`
 - [x] **`.form-input` / `.form-textarea`** — `%form-field-base` placeholder already existed in `_forms.scss`
 - ~~**Contact block partial**~~ — `contact.njk` and `contact-success.njk` use different section classes and link styles throughout; a partial would require too many parameters to be cleaner than the current two small blocks
@@ -90,7 +90,13 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 
 ## Resolved
 
-- [x] Internal links added to Our Story and Why Choose Us body copy — links to `/accessibility-services/` and `/webinars-and-training/`; `| safe` filter added to both layout templates to render anchor tags in frontmatter strings
+- [x] Accessibility Services page bottom spacing — `content-blocks__grid` now uses `margin-bottom: $space-32px` for consistent spacing below service grids
+- [x] Footer nav driven from `navigation.json` — single source of truth; `hideFromFooter: true` flag skips Home; dropdown children flattened
+- [x] Social section on/off toggle — `showSocial` boolean and `socialHeading` string added to `site.json`; `social-section.njk` wrapped in `{% if site.showSocial %}`
+- [x] `handleFocusTrap` shared utility — extracted to `utils/dom.js`; used by both `initNavigation` and `initExitModal`
+- [x] Hardcoded `"LC Education Consulting"` replaced with `{{ site.name }}` in header logo, footer brand, footer copyright, and Web3Forms hidden inputs
+- [x] `@mixin link-state-primary` and `@mixin link-state-on-dark` added to `_variables.scss`; applied across nav and footer link hover/focus blocks
+- [x] Internal links added to Our Story, Why Choose Us, Portfolio, and Webinars & Training body copy; `| safe` filter added to all four layout templates to render anchor tags in frontmatter strings
 - [x] Heading hierarchy fix — Webinars & Training page was rendering the same text at both `<h1>` and `<h2>`; fixed by adding `trainings_heading: "Training Topics"` to front matter
 - [x] Placeholder text contrast — `#a9a9a9` (~2.35:1 on white, WCAG fail) replaced with `$color-placeholder: #6b6b6b` (~5.3:1 on white, WCAG AA pass)
 - [x] Removed `twitterHandle` from `site.json` and `twitter:site` meta tag from `head.njk` — Laura does not use Twitter
