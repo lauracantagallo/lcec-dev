@@ -17,18 +17,6 @@
   margin: 0 auto;
   width: 100%;
 
-  &__heading {
-    color: $color-primary;
-    font-size: $font-size-xl;
-    font-weight: 400;
-    margin-bottom: $space-32px;
-    text-align: center;
-
-    @media (min-width: #{$bp-tablet + 1px}) {
-      font-size: $font-size-3xl;
-    }
-  }
-
   @media (min-width: #{$bp-desktop + 1px}) {
     max-width: 50%;
   }
@@ -151,8 +139,8 @@
 
     &:focus {
       color: $color-primary-dark;
-      outline: $focus-outline-stroke $color-primary;
-      outline-offset: $focus-outline-offset;
+
+      @include focus-outline($color-primary);
     }
   }
 }

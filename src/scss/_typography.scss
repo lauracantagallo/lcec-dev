@@ -64,8 +64,7 @@ address a {
   }
 
   &:focus {
-    outline: $focus-outline-stroke $color-primary;
-    outline-offset: $focus-outline-offset;
+    @include focus-outline($color-primary);
   }
 }
 
