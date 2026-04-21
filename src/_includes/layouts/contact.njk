@@ -46,9 +46,9 @@ layout: base.njk
     <div role="status" aria-live="polite" aria-atomic="true"></div>
     <form class="contact-form" action="https://api.web3forms.com/submit" method="post" novalidate>
       <input type="hidden" name="access_key" value="{{ env.web3formsKey }}" />
-      <input type="hidden" name="subject" value="New contact form submission — LC Education Consulting" />
+      <input type="hidden" name="subject" value="New contact form submission — {{ site.name }}" />
       <input type="hidden" name="redirect" value="{{ site.url }}/contact-success/" />
-      <input type="hidden" name="from_name" value="LC Education Consulting" />
+      <input type="hidden" name="from_name" value="{{ site.name }}" />
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true" />
       <h2 class="section-heading">{{ form.heading }}</h2>
 
