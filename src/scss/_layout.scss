@@ -64,6 +64,18 @@
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-xl;
     }
+
+    a {
+      color: $color-primary-light;
+
+      &:hover {
+        color: $color-white;
+      }
+
+      &:focus {
+        outline-color: $color-primary-light;
+      }
+    }
   }
 
   @media (min-width: #{$bp-tablet + 1px}) {
