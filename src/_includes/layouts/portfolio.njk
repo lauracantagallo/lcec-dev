@@ -16,7 +16,7 @@ layout: base.njk
     <h2 class="content-blocks__heading text-uppercase">{{ projects_heading }}</h2>
     <div class="content-blocks__grid">
       {% for project in projects %}
-      <article class="content-blocks__block">
+      <article class="content-blocks__block content-blocks__block--flush">
         {% if project.image %}
         <picture>
           <source srcset="{{ project.image | toWebP | url }}" type="image/webp" />

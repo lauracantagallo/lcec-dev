@@ -67,8 +67,7 @@
     font-size: $font-size-lg;
     line-height: $line-height-loose;
     max-width: 100%;
-    padding-left: $space-24px;
-    padding-right: $space-24px;
+    padding: 0 $space-24px;
     text-align: left;
 
     @media (min-width: #{$bp-tablet + 1px}) {
@@ -91,8 +90,8 @@
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-page-title;
-      text-align: left;
       margin: $space-32px 0;
+      text-align: left;
     }
   }
 
@@ -117,7 +116,22 @@
 
   &__block {
     background-color: $color-primary-light;
+    padding: $space-32px 0;
     text-align: center;
+  }
+
+  &__block--flush {
+    padding: 0;
+
+    .content-blocks__image {
+      margin-top: 0;
+    }
+  }
+
+  &__block--heading-gap {
+    .content-blocks__block-heading {
+      margin-top: $space-16px;
+    }
   }
 
   &__block-heading {
@@ -125,7 +139,7 @@
     font-size: $font-size-base;
     font-weight: 700;
     letter-spacing: $letter-spacing-wider;
-    margin: $space-24px $space-16px;
+    margin: 0 0 $space-16px;
 
     @media (min-width: #{$bp-tablet + 1px}) {
       font-size: $font-size-xl;
@@ -135,7 +149,7 @@
   &__image {
     aspect-ratio: 3 / 2;
     display: block;
-    margin-bottom: $space-16px;
+    margin: -32px 0 $space-16px;
     object-fit: cover;
     width: 100%;
   }
@@ -143,7 +157,7 @@
   &__block:has(.btn) {
     display: flex;
     flex-direction: column;
-    padding: $space-16px;
+    padding: $space-32px $space-16px;
 
     p {
       font-size: $font-size-sm;

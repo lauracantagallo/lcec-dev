@@ -6,7 +6,7 @@ layout: page-with-intro.njk
     <h2 class="content-blocks__heading text-uppercase">{{ services_heading }}</h2>
     <div class="content-blocks__grid">
       {% for service in services %}
-      <article class="content-blocks__block">
+      <article class="content-blocks__block content-blocks__block--flush content-blocks__block--heading-gap">
         <h3 class="content-blocks__block-heading">{{ service.heading }}</h3>
         <p>{{ service.description }}</p>
         <ul>

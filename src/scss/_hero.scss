@@ -72,7 +72,7 @@
     text-transform: uppercase;
 
     @media (min-width: #{$bp-tablet + 1px}) {
-      font-size: 1.375rem;
+      font-size: $font-size-xl;
     }
   }
 

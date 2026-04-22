@@ -17,7 +17,7 @@ layout: base.njk
     <h2 class="content-blocks__heading text-uppercase">{{ philosophy.heading }}</h2>
     <div class="content-blocks__grid">
       {% for block in philosophy.blocks %}
-      <article class="content-blocks__block">
+      <article class="content-blocks__block content-blocks__block--flush content-blocks__block--heading-gap">
         <h3 class="content-blocks__block-heading">{{ block.heading }}</h3>
         <picture>
           <source srcset="{{ block.image | toWebP | url }}" type="image/webp" />
