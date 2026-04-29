@@ -22,7 +22,7 @@ Suggested copy updates flagged during a content review (April 2026). Organized b
 
 **Why this matters:** A visitor who sees two different phone numbers will question the credibility of the business. Both numbers should be correct, but having two without explanation can be confusing.
 
-LC Comment:   My google voice number is 856-310-4483.   I do not want to use my personal cell number (302-750-7443).  We talked about setting up a new number. Working on this.... but for now use the google voice number.
+> LC Comment:   My google voice number is 856-310-4483.   I do not want to use my personal cell number (302-750-7443).  We talked about setting up a new number. Working on this.... but for now use the google voice number.
 ---
 
 ### 2. "16 years" may be inaccurate and appears inconsistently
@@ -35,7 +35,7 @@ LC Comment:   My google voice number is 856-310-4483.   I do not want to use my 
 
 **Why:** A visible conflict between "founded 2014" and "16 years of experience" is the first thing a procurement officer fact-checking the vendor will notice.
 
-LC Comment:  I have 16 years of experience in Special Education.   Company was actually founded in 2016 or 2017!  I'd go with 2017.   I move to NJ the year after in 2018.  Change where ever you see fit on the site!
+> LC Comment:  I have 16 years of experience in Special Education.   Company was actually founded in 2016 or 2017!  I'd go with 2017.   I move to NJ the year after in 2018.  Change where ever you see fit on the site!
 ---
 
 ### 3. Grammar error in VPAT service feature **[readability]**
@@ -48,7 +48,7 @@ LC Comment:  I have 16 years of experience in Special Education.   Company was a
 
 **Why:** The current wording is a grammatical fragment — it reads as a verb phrase ("documents [verb] criteria") instead of a description. The suggested version is grammatically complete.
 
-LC Comment:  Go ahead and change it to be correct.  Thanks!
+> LC Comment:  Go ahead and change it to be correct.  Thanks!
 ---
 
 ### 4. Brand name in wrong order in case study label
@@ -61,7 +61,7 @@ LC Comment:  Go ahead and change it to be correct.  Thanks!
 
 **Why:** The product is called "Articulate 360," not "360 Articulate." The dash before the test type also improves readability.
 
-LC Comment:  Go ahead and change it to be correct.  Thanks!
+> LC Comment:  Go ahead and change it to be correct.  Thanks!
 ---
 
 ### 5. "Inclusive practice" vs. "inclusive practices" — inconsistent **[readability]**
@@ -74,14 +74,14 @@ LC Comment:  Go ahead and change it to be correct.  Thanks!
 
 **Why:** Inconsistency looks like a typo. The plural is more natural in English — the singular reads as a formal field of study rather than a plain description.
 
-LC Comment:  Go ahead and change this.  Thanks for catching it!
+> LC Comment:  Go ahead and change this.  Thanks for catching it!
 ---
 
 ## High Impact — Visibility and First Impressions
 
 *High-traffic pages and the first text a visitor reads. Quick wins with meaningful results.*
 
-LC Comment:  I trust you.  Go ahead and add visability and first impressions where you see fit. 
+> LC Comment:  I trust you.  Go ahead and add visability and first impressions where you see fit. 
 
 ---
 
@@ -95,7 +95,7 @@ LC Comment:  I trust you.  Go ahead and add visability and first impressions whe
 
 **Why:** "Accessibility gaps" is insider language. "Accessibility problems" says the same thing plainly and lands harder with a non-specialist audience — which is most of the site's visitors.
 
-LC Comment:  Go ahead and change this.  Thanks for catching it!
+> LC Comment:  Go ahead and change this.  Thanks for catching it!
 
 ---
 
@@ -110,7 +110,7 @@ LC Comment:  Go ahead and change this.  Thanks for catching it!
 
 **Why:** Search engines use the meta description. Visitors read the hero. Having them identical is a missed opportunity to connect with the visitor in a way that a search snippet does not need to.
 
-**LC Comment:  What do you think it should say?  If you have an idea, go ahead and add it/change it.   I trust your judgement on this too!  Ask me for additional help if you need it.  I am happy to help.**
+> > LC Comment:  What do you think it should say?  If you have an idea, go ahead and add it/change it.   I trust your judgement on this too!  Ask me for additional help if you need it.  I am happy to help.
 
 ---
 
@@ -126,7 +126,7 @@ LC Comment:  Go ahead and change this.  Thanks for catching it!
 
 **Why:** The original packs four embedded list items into one sentence. For ESL readers and middle school reading level, sentences should stay under 20–25 words. Four short sentences carry the same information with far less effort to read.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 ---
 
 ### 9. "Discovery call" is sales jargon **[readability]**
@@ -139,7 +139,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** "Discovery call" is a term from American sales culture. ESL speakers and first-time service buyers may not know what it means or what to expect from it. "Introduction call" or "free 30-minute call" is plain and universal.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -153,7 +153,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** "Barriers to access," "digital accessibility," and "inclusive training" are three jargon terms in one sentence. The suggested version conveys the same meaning in plain words.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -167,7 +167,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** WCAG is not known outside the accessibility field. Clients from K–12 administration, HR, or legal researching compliance will not know the term.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -181,7 +181,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** DOJ is recognizable to many but not all readers. Expanding it costs one line and helps ESL readers and anyone outside the legal/government world.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 ---
 
 ## Medium Impact — Clarity and Completeness
@@ -200,7 +200,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** "Professional development" is insider language from education. Clients from healthcare, nonprofits, or the private sector may not recognize it. "Training" works for every audience.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 ---
 
 ### 14. LMS is not defined **[readability]**
@@ -213,7 +213,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** LMS is standard in ed-tech but unfamiliar to many non-education clients. A one-time expansion costs nothing.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -227,7 +227,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** AAC is clinical terminology unfamiliar to school administrators, HR professionals, and most non-specialist clients.
 
-LC Comment:  I agree.  Change to suggested wording for carity. Thanks!
+> LC Comment:  I agree.  Change to suggested wording for carity. Thanks!
 ---
 
 ### 16. "Rooted in even more years of experience" is vague **[readability]**
@@ -240,7 +240,7 @@ LC Comment:  I agree.  Change to suggested wording for carity. Thanks!
 
 **Why:** "Even more years" is vague — more than what? "Over a decade" is concrete and stronger.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -254,7 +254,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** Many clients requesting PDF remediation do so for compliance reasons without knowing what a screen reader is. One phrase removes the assumption.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -268,7 +268,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** Tighter copy. The invitation is already made clearly in the sentence before it.
 
-LC Comment:  I agree.  Change to suggested. Thanks!
+> LC Comment:  I agree.  Change to suggested. Thanks!
 
 ---
 
@@ -283,7 +283,7 @@ LC Comment:  I agree.  Change to suggested. Thanks!
 
 **Why:** "Welcome to" is filler. Prospective clients scanning a portfolio want to know what they are looking at.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 ---
 
@@ -297,7 +297,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Why:** A completed VPAT is officially called an Accessibility Conformance Report (ACR). Procurement teams and government clients use ACR terminology. The framing carries more weight with those audiences.
 
-LC Comment:  I agree.  Change to suggested wording. Thanks!
+> LC Comment:  I agree.  Change to suggested wording. Thanks!
 ---
 
 ### 21. Reposition Apple Teacher in credentials list
@@ -308,7 +308,7 @@ LC Comment:  I agree.  Change to suggested wording. Thanks!
 
 **Suggested:** Move it to the bottom of the credentials list. Apple Teacher is a free self-paced badge program, not a formal certification — listing it next to NBPTS and state licensure undersells the stronger credentials above it.
 
-LC Comment:  I agree.  Change to suggested order of credentials. Thanks!
+> LC Comment:  I agree.  Change to suggested order of credentials. Thanks!
 
 ---
 
@@ -322,7 +322,7 @@ LC Comment:  I agree.  Change to suggested order of credentials. Thanks!
 
 **Why:** TalkBack is the primary screen reader for Android. Confirm with Laura whether she tests on Android before updating — if not, the current list is honest as-is.
 
-LC Comment:  I agree.  Add TalkBack.  However, I have not tested with Android.  Since we are working together, I feel comfortable adding it if you do.
+> LC Comment:  I agree.  Add TalkBack.  However, I have not tested with Android.  Since we are working together, I feel comfortable adding it if you do.
 ---
 
 ## Needs Laura's Input
@@ -339,7 +339,7 @@ LC Comment:  I agree.  Add TalkBack.  However, I have not tested with Android.  
 
 **Suggested:** Add 2–3 sentences per project: what the client needed, what was done, and what the result was. The intro already promises "context about the goals, approach, and impact" — the projects themselves do not deliver on that yet.
 
-LC Comment:  I definitely want to add 2-3 sentences per project.  The best way to do this would be to add information in our google docs. Do you agree?
+> LC Comment:  I definitely want to add 2-3 sentences per project.  The best way to do this would be to add information in our google docs. Do you agree?
 
 ---
 
@@ -351,7 +351,7 @@ LC Comment:  I definitely want to add 2-3 sentences per project.  The best way t
 
 **Why:** Broad category names do not help a prospective client decide whether Laura is the right fit for their staff. Specific topics do.
 
-LC Comment:  I agree on this. I'll add a list of webinar topics to google docs.
+> LC Comment:  I agree on this. I'll add a list of webinar topics to google docs.
 
 ---
 
@@ -363,7 +363,7 @@ LC Comment:  I agree on this. I'll add a list of webinar topics to google docs.
 
 **Why:** Clients comparing vendors need to know exactly what they are buying. Deliverable clarity reduces friction before a contact.
 
-LC Comment:  I agree with this.   Should we add this to the google doc or do you feel comfortable changing it?  We can definitely collaborate on this!
+> LC Comment:  I agree with this.   Should we add this to the google doc or do you feel comfortable changing it?  We can definitely collaborate on this!
 
 ---
 
@@ -375,7 +375,7 @@ LC Comment:  I agree with this.   Should we add this to the google doc or do you
 
 **Why:** A single testimonial can read as cherry-picked. Multiple voices from different client types builds trust across all of the site's target audiences.
 
-LC Comment:  Yes... I am trying!   I will have a friend write one up.  I've also had a parent write one and need to ask the people I did webinars for write testimonials.
+> LC Comment:  Yes... I am trying!   I will have a friend write one up.  I've also had a parent write one and need to ask the people I did webinars for write testimonials.
 
 ---
 
@@ -390,7 +390,7 @@ LC Comment:  Yes... I am trying!   I will have a friend write one up.  I've also
 
 **Why:** These are the first questions a prospective client has. Answering them on the page reduces back-and-forth before a first call and opens the door to FAQ rich results in search.
 
-LC Comment:  I agree this would be helpful!  We can add this to the site and add more FAQ's to the google doc.
+> > LC Comment:  I agree this would be helpful!  We can add this to the site and add more FAQ's to the google doc.
 ---
 
 ### 28. Hero has no option for visitors not ready to book
@@ -403,7 +403,7 @@ LC Comment:  I agree this would be helpful!  We can add this to the site and add
 
 **Why:** Not every first-time visitor is ready to book a call. A soft option captures interest that would otherwise leave.
 
-LC Comment:  I agree with this.  Great suggestion!   I like the suggestion you provided.  Do you have any other ideas in mind?
+> LC Comment:  I agree with this.  Great suggestion!   I like the suggestion you provided.  Do you have any other ideas in mind?
 
 ---
 
