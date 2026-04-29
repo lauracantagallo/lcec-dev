@@ -413,79 +413,79 @@ Suggested copy updates flagged during a content review (April 2026). Organized b
 
 Changed from "Documents supported, partially supported, and not supported criteria" to "Documents which accessibility criteria are supported, partially supported, or not supported."
 
-### ~~Brand name in wrong order in case study label~~ ✓ Fixed 2026-04-29
+### ~~4. Brand name in wrong order in case study label~~ ✓ Fixed 2026-04-29
 
-Changed from "360 Articulate" to "Articulate 360" and updated dash style to colon.
+Changed from "360 Articulate" to "Articulate 360" and updated to en-dash: "Articulate 360 Courses – VoiceOver Manual Testing."
 
-### ~~"Inclusive practice" vs. "inclusive practices" inconsistency~~ ✓ Fixed 2026-04-29
+### ~~5. "Inclusive practice" vs. "inclusive practices" inconsistency~~ ✓ Fixed 2026-04-29
 
 Standardized to "inclusive practices" throughout (our-story.md, webinars-and-training.md).
 
-### ~~Stats heading uses insider language~~ ✓ Fixed 2026-04-29
+### ~~6. Stats heading uses insider language~~ ✓ Fixed 2026-04-29
 
 Changed from "Most Organizations Don't Know They Have Accessibility Gaps" to "Most Organizations Don't Know Their Website Has Accessibility Problems."
 
-### ~~Hero subheading identical to meta description~~ ✓ Fixed 2026-04-29
+### ~~7. Hero subheading identical to meta description~~ ✓ Fixed 2026-04-29
 
 Rewrote hero subheading to be more human and benefit-focused: "We work with organizations to remove barriers, improve compliance, and empower all users. Rooted in real experience with people who use assistive technology." Kept meta description as-is.
 
-### ~~Webinars intro is one 47-word sentence~~ ✓ Fixed 2026-04-29
+### ~~8. Webinars intro is one 47-word sentence~~ ✓ Fixed 2026-04-29
 
 Broke into four shorter sentences for readability.
 
-### ~~"Discovery call" is sales jargon~~ ✓ Fixed 2026-04-29
+### ~~9. "Discovery call" is sales jargon~~ ✓ Fixed 2026-04-29
 
-Changed to "Introduction Call" across all pages (index.md, contact.md, contact-success.md, portfolio.md).
+Changed to "Introduction Call" across all pages (index.md, contact.md, contact-success.md, portfolio.md, cta.json).
 
-### ~~Mission statement stacks three abstract nouns~~ ✓ Fixed 2026-04-29
+### ~~10. Mission statement stacks three abstract nouns~~ ✓ Fixed 2026-04-29
 
 Rewrote from jargon-heavy version to plain language: "LC Education Consulting helps schools, organizations, and businesses make their websites, documents, and digital tools easier for everyone to use. This includes people with disabilities."
 
-### ~~WCAG is never defined where it first appears~~ ✓ Fixed 2026-04-29
+### ~~11. WCAG is never defined where it first appears~~ ✓ Fixed 2026-04-29
 
 Expanded to "WCAG (Web Content Accessibility Guidelines)" on first use in accessibility-services.md and webinars-and-training.md.
 
-### ~~DOJ not expanded in the announcement bar~~ ✓ Fixed 2026-04-29
+### ~~12. DOJ not expanded in the announcement bar~~ ✓ Fixed 2026-04-29
 
 Changed from "The DOJ extended deadlines by one year" to "The U.S. Department of Justice (DOJ) extended deadlines by one year."
 
-### ~~"Professional development" is educational jargon~~ ✓ Fixed 2026-04-29
+### ~~13. "Professional development" is educational jargon~~ ✓ Fixed 2026-04-29
 
 Changed to "customized training" and "training" throughout webinars-and-training.md.
 
-### ~~LMS is not defined~~ ✓ Fixed 2026-04-29
+### ~~14. LMS is not defined~~ ✓ Fixed 2026-04-29
 
 Expanded to "learning management system (LMS)" in accessibility-services.md.
 
-### ~~AAC is not defined~~ ✓ Fixed 2026-04-29
+### ~~15. AAC is not defined~~ ✓ Fixed 2026-04-29
 
-Expanded to "AAC (Augmentative and Alternative Communication)" in why-choose-us.md (already completed during earlier edits).
+Expanded to "AAC (Augmentative and Alternative Communication)" in why-choose-us.md.
 
-### ~~"Rooted in even more years of experience" is vague~~ ✓ Fixed 2026-04-29
+### ~~16. "Rooted in even more years of experience" is vague~~ ✓ Fixed 2026-04-29
 
-Changed to "backed by over a decade of hands-on experience" in our-story.md (already completed during earlier edits).
+Changed to "backed by over a decade of hands-on experience" in our-story.md.
 
-### ~~"Screen-reader ready" needs a brief explanation~~ ✓ Fixed 2026-04-29
+### ~~17. "Screen-reader ready" needs a brief explanation~~ ✓ Fixed 2026-04-29
 
 Updated to explain screen readers are "used by people who are blind or have low vision."
 
-### ~~Contact page intro has a redundant sentence~~ ✓ Fixed 2026-04-29
+### ~~18. Contact page intro has a redundant sentence~~ ✓ Fixed 2026-04-29
 
 Removed "We're happy to schedule a free consultation" as it duplicated the previous sentence.
 
-### ~~Portfolio intro opens weakly~~ ✓ Fixed 2026-04-29
+### ~~19. Portfolio intro opens weakly~~ ✓ Fixed 2026-04-29
 
 Removed "Welcome to" filler and rewrote to lead with the work.
 
-### ~~Clarify VPAT terminology to ACR~~ ✓ Fixed 2026-04-29
+### ~~20. Clarify VPAT terminology to ACR~~ ✓ Fixed 2026-04-29
 
 Updated description to "Accessibility Conformance Report (ACR/VPAT) documenting WCAG (Web Content Accessibility Guidelines) 2.1 or 2.2 AA conformance."
 
-### ~~Reposition Apple Teacher in credentials list~~ ✓ Fixed 2026-04-29
+### ~~21. Reposition Apple Teacher in credentials list~~ ✓ Fixed 2026-04-29
 
 Moved to bottom and added credential note about TalkBack testing.
 
-### ~~Add TalkBack to screen reader list~~ ✓ Fixed 2026-04-29
+### ~~22. Add TalkBack to screen reader list~~ ✓ Fixed 2026-04-29
 
 Added "TalkBack" to testing list in accessibility-services.md and added "TalkBack accessibility testing on Android devices" to credentials in why-choose-us.md.
 
