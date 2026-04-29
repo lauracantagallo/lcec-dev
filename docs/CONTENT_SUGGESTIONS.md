@@ -391,6 +391,7 @@ Suggested copy updates flagged during a content review (April 2026). Organized b
 **Why:** These are the first questions a prospective client has. Answering them on the page reduces back-and-forth before a first call and opens the door to FAQ rich results in search.
 
 > LC Comment:  I agree this would be helpful!  We can add this to the site and add more FAQ's to the google doc.
+---
 
 ### 28. Hero has no option for visitors not ready to book
 
