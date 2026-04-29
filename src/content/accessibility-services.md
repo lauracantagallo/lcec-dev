@@ -8,21 +8,21 @@ intro:
 services_heading: "Accessibility Services"
 services:
   - heading: "Digital Accessibility Audits"
-    description: "Manual testing of your website, LMS, PDFs, and documents using real screen readers — not just automated tools."
+    description: "Manual testing of your website, learning management system (LMS), PDFs, and documents using real screen readers, not just automated tools."
     features:
-      - "Testing with NVDA, JAWS, and VoiceOver"
+      - "Testing with NVDA, JAWS, VoiceOver, and TalkBack"
       - "Desktop, tablet, and mobile testing"
       - "Full documentation with screenshots and screen recordings"
       - "Prioritized list of every barrier found"
-    case_study: "<a href=\"/portfolio/\">Case Study: 360 Articulate Courses VoiceOver Manual Testing</a>"
+    case_study: "<a href=\"/portfolio/\">Case Study: Articulate 360 Courses – VoiceOver Manual Testing</a>"
   - heading: "VPAT Writing"
-    description: "Full WCAG 2.1 or 2.2 AA conformance documentation."
+    description: "Accessibility Conformance Report (ACR/VPAT) documenting WCAG (Web Content Accessibility Guidelines) 2.1 or 2.2 AA conformance."
     features:
-      - "Documents supported, partially supported, and not supported criteria"
+      - "Documents which accessibility criteria are supported, partially supported, or not supported"
       - "Updated after remediation, when needed"
     case_study: "<a href=\"/portfolio/\">Case Study: American College of Physicians (MKSAP LMS)</a>"
   - heading: "PDF & Document Remediation"
-    description: "Making your existing PDFs, Word documents, PowerPoints, and forms fully accessible and screen-reader ready."
+    description: "Making your existing PDFs, Word documents, PowerPoints, and forms fully accessible, including readable by screen readers used by people who are blind or have low vision."
     features:
       - "Tagging, reading order, alt text, and document titles"
       - "Fillable form accessibility"

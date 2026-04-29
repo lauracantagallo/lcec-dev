@@ -1,10 +1,9 @@
 # LC Education Consulting — Website
 
-Source repository for the LC Education Consulting website, built with Eleventy, Sass, and esbuild.
+The LC Education Consulting website is a fully accessible, production-grade static site built with Eleventy, Sass, and esbuild. It prioritizes accessibility, security, performance, and SEO at every layer of the build, not as an afterthought.
 
-**Developer:** Mikey Ilagan
-
----
+**Site Owner:** Laura Cantagallo (`lauracantagallo` on GitHub)  
+**Maintainer:** Mikey Ilagan (`mikeyil` on GitHub)
 
 For a detailed breakdown of the accessibility, security, performance, SEO, and documentation decisions behind this build, see [docs/ABOUT_BUILD.md](docs/ABOUT_BUILD.md).
 
@@ -185,16 +184,58 @@ Two repositories on Laura's GitHub account (`lauracantagallo`), both hosted on G
 
 | Repo | Purpose | URL |
 | ---- | ------- | --- |
-| `lcec-prod` | Production | Custom domain (TBD) |
+| `lcec-prod` | Production | `https://www.lceducationconsulting.com` (custom domain) |
 | `lcec-dev` | Staging | `https://lauracantagallo.github.io/lcec-dev/` |
 
 Both deploy automatically on push to `main` via `.github/workflows/pages-main.yml`. The `PATH_PREFIX` is set per-repo as a GitHub Actions repository variable so the same workflow serves both repos without modification.
 
-The `lcec-dev` staging repo also includes Decap CMS for content editing. The CMS is not deployed to `lcec-prod`. See [`docs/setup-github.md`](docs/setup-github.md) for the full setup.
+The `lcec-dev` staging repo also includes Decap CMS for content editing. The CMS is not deployed to `lcec-prod`. Laura can edit content directly via the CMS at `https://lauracantagallo.github.io/lcec-dev/admin/` (GitHub OAuth required).
 
-## Notes
+For the complete deployment setup, repository configuration, and content workflow, see:
+- [`docs/setup-github.md`](docs/setup-github.md) — Deployment and OAuth setup
+- [`docs/workflow.md`](docs/workflow.md) — Content editing and change request workflow
+
+## Before Launch
+
+Critical items that must be completed before going live:
+
+- [ ] **Contact form testing** — Submit a test entry and verify Laura receives the email with correct reply-to address (requires `WEB3FORMS_KEY` GitHub Actions secret in both repos)
+
+- [ ] **Screen reader testing** — Test core user flows with NVDA, JAWS, VoiceOver, and TalkBack
+- [ ] **Custom domain setup** — Configure DNS (CNAME/A record), then set `PATH_PREFIX: /` in `lcec-prod` repo variable so asset paths resolve correctly
+- [ ] **GA4 configuration** — Add tracking ID to `gaId` in `src/_data/site.json`
+- [ ] **GA4 consent mode** — Implement GA4 Consent Mode or delay `gtag` initialization until cookie consent is accepted
+
+See [`docs/TODO.md`](docs/TODO.md) for the full checklist (Blockers, Before Launch, Security, Optimization, etc.).
+
+## Content Updates & Collaboration
+
+Laura can request site changes in two ways:
+
+1. **Content edits** (text, images, page copy) — Edit directly in the CMS at `https://lauracantagallo.github.io/lcec-dev/admin/`
+2. **Code changes** (design, layout, new features, bug fixes) — Open an issue on the production repo at [`github.com/lauracantagallo/lcec-prod/issues`](https://github.com/lauracantagallo/lcec-prod/issues)
+
+See [`docs/workflow.md`](docs/workflow.md) for detailed instructions.
+
+## Documentation
+
+The `docs/` directory is maintained as a first-class part of the project:
+
+| File | Purpose |
+| ---- | ------- |
+| [`docs/TODO.md`](docs/TODO.md) | Prioritized task list — Blockers, Before Launch, Security, Optimization, AT Testing, Nice to Have |
+| [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Technical change log — every meaningful code change with file references |
+| [`docs/UPDATES.md`](docs/UPDATES.md) | Plain-language site updates — written for non-technical stakeholders (Laura) |
+| [`docs/CONTENT_SUGGESTIONS.md`](docs/CONTENT_SUGGESTIONS.md) | Copy review — grammar, accuracy, jargon, ESL/readability flags, with Laura's feedback |
+| [`docs/ABOUT_BUILD.md`](docs/ABOUT_BUILD.md) | Technical deep-dive — accessibility, security, performance, SEO, and documentation decisions |
+| [`docs/setup-github.md`](docs/setup-github.md) | Deployment setup — GitHub repos, Pages config, OAuth app, Cloudflare Worker, push workflow |
+| [`docs/workflow.md`](docs/workflow.md) | Collaboration guide — how Laura requests edits, changes, and features via GitHub and CMS |
+| [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) | Periodic maintenance checklist — CSS, JS, templates, a11y, content, SEO, docs, dependencies |
+
+## Implementation Notes
 
 - `site.url` in `src/_data/site.json` must match the live domain
-- When `lcec-prod` is pointed at a custom domain, set the `PATH_PREFIX` repo variable to `/`
+- When `lcec-prod` is pointed at a custom domain, set the `PATH_PREFIX` repo variable to `/` (not `/lcec-prod/`)
 - `WEB3FORMS_KEY` must be added as a GitHub Actions secret in both repos before the contact form will work
 - A pull request template lives at `.github/pull_request_template.md` — includes accessibility and SEO checklist items
+- Pre-commit hooks (Husky + lint-staged) run ESLint and Stylelint on staged files before each commit

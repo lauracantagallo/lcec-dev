@@ -18,7 +18,7 @@ Category tags: `[a11y]` `[seo]` `[optimization]` `[security]` `[content]`
 
 ## Before Launch — Should Do
 
-- [ ] **Confirm phone numbers with Laura** `[content]` — footer uses `302-750-7443`; header/contact uses `856-310-4483`; both may be intentional but should be verified before launch (see `docs/CONTENT_SUGGESTIONS.md` item 1)
+- [x] **Confirm phone numbers with Laura** `[content]` — confirmed to use `856-310-4483` (Google Voice) everywhere; removed old personal cell number `302-750-7443` from footer
 - [ ] **Google Business Profile** `[seo]` — create a profile for LC Education Consulting, then paste the URL into `site.json` → `"googleBusinessUrl"`; it will automatically appear in the business schema `sameAs` array
 - [ ] **Google Search Console** `[seo]` — verify ownership by pasting the GSC verification code into `site.json` → `"gscVerificationId"`; then submit the sitemap
 - [ ] **`og:image`** `[seo]` — currently uses a generic `/img/og-image.png`; a real branded image (1200×630) would improve link previews on LinkedIn, Slack, and iMessage

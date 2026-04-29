@@ -4,6 +4,82 @@ All significant changes to the LC Education Consulting site, newest first.
 
 ---
 
+## 2026-04-29 — Copyedit, factual accuracy, and plain-language improvements
+
+### Content changes
+
+#### `src/index.md`
+
+- Hero subheading rewritten: "We work with organizations to remove barriers, improve compliance, and empower all users. Rooted in real experience with people who use assistive technology." (Previously identical to meta description; now benefit-focused and human.)
+- Stats heading changed from "Most Organizations Don't Know They Have Accessibility Gaps" to "Most Organizations Don't Know Their Website Has Accessibility Problems" (insider language → plain language)
+- CTA text changed from "Book a Free 30-Minute Discovery Call" to "Schedule a Free 30-Minute Introduction Call" (sales jargon → accessible language)
+- Announcement body expanded DOJ: "The U.S. Department of Justice (DOJ) extended deadlines by one year" (acronym now defined on first use)
+
+#### `src/content/our-story.md`
+
+- Company founding year corrected from 2014 to 2017 (per Laura's confirmation)
+- Mission statement rewritten from jargon-heavy ("remove barriers to access through digital accessibility, assistive technology, and inclusive training") to plain language ("make their websites, documents, and digital tools easier for everyone to use. This includes people with disabilities.")
+- "Inclusive practice" changed to "inclusive practices" for consistency
+- (Earlier update already addressed: "even more years" → "over a decade of hands-on experience")
+
+#### `src/content/why-choose-us.md`
+
+- AAC expanded: "AAC (Augmentative and Alternative Communication) devices" (already completed in earlier update)
+- Added TalkBack credential: "TalkBack accessibility testing on Android devices"
+
+#### `src/content/accessibility-services.md`
+
+- VPAT service description grammar fixed: changed from "Documents supported, partially supported, and not supported criteria" to "Documents which accessibility criteria are supported, partially supported, or not supported"
+- Case study label corrected: "Articulate 360 Courses" (not "360 Articulate"); changed dash to colon for consistency
+- Digital Accessibility Audits description expanded LMS: "learning management system (LMS)"
+- Added TalkBack to screen reader list: "Testing with NVDA, JAWS, VoiceOver, and TalkBack"
+- VPAT description updated: "Accessibility Conformance Report (ACR/VPAT) documenting WCAG (Web Content Accessibility Guidelines) 2.1 or 2.2 AA conformance" (expanded both ACR/VPAT and WCAG terms)
+- PDF & Document Remediation description clarified: "including readable by screen readers used by people who are blind or have low vision" (removed jargon, added context)
+
+#### `src/content/webinars-and-training.md`
+
+- Meta description changed from "professional development" to "training" (consistency with other changes)
+- Intro subheading split from a 47-word sentence into four short sentences for readability:
+  - "We offer customized training for K–12 schools, colleges, and organizations."
+  - "Topics include assistive technology, digital accessibility, and inclusive practices."
+  - "Sessions are available in-person in the New Jersey/Philadelphia area or online nationwide."
+  - "Travel outside this area is available on request."
+- "Professional development" changed to "training" in the "Inclusive Practices" heading description
+- WCAG expanded: "WCAG (Web Content Accessibility Guidelines) principles"
+
+#### `src/content/contact.md`
+
+- Removed redundant third sentence from intro: "We're happy to schedule a free consultation" (duplicated the previous sentence's invitation)
+- CTA text changed from "Book a Free 30-Minute Discovery Call" to "Schedule a Free 30-Minute Introduction Call"
+- Meta description updated to match
+
+#### `src/content/contact-success.md`
+
+- CTA subheading changed from "Book a Free 30-Minute Discovery Call" to "Schedule a Free 30-Minute Introduction Call"
+- Body text updated to match
+
+#### `src/content/portfolio.md`
+
+- Intro rewritten to lead with the work instead of "Welcome to" filler: "Each project here represents a practical, thoughtful approach to removing barriers. You'll find examples of..." (removed redundant phrasing)
+- Project title changed: "Web Accessibility Evaluation Using VoiceOver: Articulate 360 Online Courses" (colon consistency; "Articulate 360" correct order)
+- CTA subheading changed from "Book a Free 30-Minute Discovery Call" to "Schedule a Free 30-Minute Introduction Call"
+
+#### `src/_includes/partials/footer.njk`
+
+- Phone number updated from 302-750-7443 to 856-310-4483 (Laura's Google Voice number; removed outdated personal cell number)
+
+### Style changes
+
+- Removed emdashes (—) from all content pages; replaced with periods or reworded for clarity
+  - Hero subheading: "...empower all users. Rooted in..." (was: "...all users — rooted...")
+  - Mission statement: "...to use. This includes people..." (was: "...to use — including people...")
+  - Digital Audits description: "...not just automated tools." (was: "...tools — not...")
+  - PDF Remediation description: "...including readable by..." (was: "...readable — including...")
+  - Portfolio intro: "...removing barriers. You'll find..." (was: "...barriers — from accessibility...")
+  - Case study label: "Courses: VoiceOver" (was: "Courses – VoiceOver")
+
+---
+
 ## 2026-04-21 — DRY pass, CMS-readiness, and README restructuring
 
 ### Templates

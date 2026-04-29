@@ -4,6 +4,47 @@ A plain-language record of what has changed on the site — features, content, a
 
 ---
 
+## April 29, 2026 — Content copyedit and factual accuracy
+
+### Contact information
+
+- Removed outdated personal cell number (302-750-7443) from the footer. All pages now consistently use Laura's Google Voice number (856-310-4483).
+
+### Factual accuracy fixes
+
+- Updated company founding year from 2014 to 2017 throughout the site.
+- Clarified Laura's background: she has 16 years of experience in special education, and the company was founded in 2017.
+
+### Plain-language improvements
+
+All changes follow Laura's feedback to improve readability for ESL speakers and a middle-school reading level (grades 6–8).
+
+- **Homepage stats heading** — changed from "Accessibility Gaps" to "Accessibility Problems" (plain language instead of insider term).
+- **Hero subheading** — rewrote to focus on benefits: "We work with organizations to remove barriers, improve compliance, and empower all users. Rooted in real experience with people who use assistive technology." (Previously identical to the search engine snippet.)
+- **Call-to-action buttons** — changed from "Book a Free 30-Minute Discovery Call" to "Schedule a Free 30-Minute Introduction Call" (accessible language instead of sales jargon).
+- **Webinars intro** — split a 47-word sentence into four short sentences for clarity.
+- **Mission statement** — simplified from three abstract nouns ("barriers to access," "digital accessibility," "inclusive training") to plain words: "make websites, documents, and digital tools easier for everyone to use, including people with disabilities."
+- **Portfolio intro** — removed "Welcome to" filler and rewrote to lead with the work.
+- **Service descriptions** — expanded industry jargon with plain-language definitions:
+  - LMS: "learning management system (LMS)"
+  - WCAG: "WCAG (Web Content Accessibility Guidelines)"
+  - Screen reader use: "used by people who are blind or have low vision"
+  - AAC: "Augmentative and Alternative Communication" (already completed in earlier updates)
+
+### Grammar and consistency fixes
+
+- Fixed VPAT service feature description from a grammatical fragment to a complete sentence.
+- Standardized "inclusive practices" (plural) throughout instead of mixing singular and plural forms.
+- Fixed brand name order: "Articulate 360 Courses" (not "360 Articulate").
+- Updated VPAT terminology to "Accessibility Conformance Report (ACR/VPAT)" for procurement-team clarity.
+- Removed redundant sentence from the Contact page intro.
+
+### Screen reader coverage
+
+- Added TalkBack to the list of tested screen readers (with note that Android testing is new).
+
+---
+
 ## April 21, 2026 — Visual fixes and accessibility improvements
 
 ### Link colors on blue sections
